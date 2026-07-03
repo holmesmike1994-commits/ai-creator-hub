@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://holmesmike1994-commits.github.io/ai-creator-hub/sitemap.xml
