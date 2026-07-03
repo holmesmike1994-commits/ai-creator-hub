@@ -34,7 +34,15 @@
     return fallback;
   };
 
-  const publicUrl = (href) => href && href !== "#" ? href : "";
+  const publicUrl = (href) => {
+    try {
+      const value = String(href || "").trim();
+      const url = new URL(value);
+      return ["http:", "https:"].includes(url.protocol) ? value : "";
+    } catch {
+      return "";
+    }
+  };
 
   const nowDate = () => new Date().toISOString().slice(0, 10);
 
@@ -129,9 +137,22 @@
       source.quickVerdict ||
       source.verdict ||
       `${name} is worth evaluating if your workflow matches its strongest use cases, but pricing, platform support, and current feature claims should be verified from official sources before making a recommendation.`;
-    const officialWebsite = source.officialWebsite || source.website || "#";
+    const officialWebsite = publicUrl(source.officialWebsite || source.website);
     const affiliateUrl = source.affiliateUrl || source.affiliateURL || "";
-    const rating = Number(source.overallRating || source.rating || 0) || 0;
+    const scores = source.scores || {
+      aiCreatorHubScore: {
+        score: null,
+        label: "Pending",
+        status: "Pending",
+        badges: []
+      },
+      communityScore: {
+        score: null,
+        sentiment: "Pending",
+        status: "Pending"
+      },
+      confidence: "Limited"
+    };
     const sameCategory = allReviews
       .filter((item) => item.name !== name && item.category === category)
       .slice(0, 4);
@@ -148,11 +169,12 @@
       slug,
       category,
       currentVersion: source.currentVersion || "Current version pending official verification",
-      overallRating: rating,
+      scores,
       shortDescription,
       bestFor,
       officialWebsite,
-      affiliateUrl,
+      affiliateUrl: publicUrl(affiliateUrl),
+      affiliateCtaLabel: source.affiliateCtaLabel || source.ctaLabel || `Get ${name}`,
       quickVerdict: verdict,
       developer: source.developer || "Pending official verification",
       pricing: source.pricing || "Pending official pricing verification",
@@ -216,7 +238,7 @@
         `The final recommendation for ${name} should be based on verified pricing, documented features, current product limits, and hands-on results. ${BRAND} should clearly separate confirmed facts from editorial judgment.`,
       affiliateDisclosure:
         source.affiliateDisclosure ||
-        `${BRAND} may earn a commission if readers purchase through affiliate links. Affiliate relationships do not determine ratings, rankings, or recommendations.`,
+        `${BRAND} may earn a commission if readers purchase through affiliate links. Affiliate relationships do not determine scores, rankings, or recommendations.`,
       sources: ensureArray(source.sources, SOURCE_CHECKLIST.map((name) => ({ name, status: "Required before publication" }))),
       published: source.published || nowDate(),
       updated: source.updated || source.published || nowDate()
@@ -296,10 +318,12 @@
     </section>
   `;
 
+  const scoreText = (score) =>
+    typeof score === "number" ? `${score.toFixed(1)} / 10` : "Pending";
+
   const schemaScripts = (review, baseUrl = "") => {
     const canonical = `${baseUrl}${review.seo.canonicalPath || `reviews/${review.slug}.html`}`;
-    return [
-      {
+    const reviewSchema = {
         "@context": "https://schema.org",
         "@type": "Review",
         itemReviewed: {
@@ -310,16 +334,20 @@
           url: publicUrl(review.officialWebsite)
         },
         author: { "@type": "Organization", name: BRAND },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: review.overallRating || 0,
-          bestRating: 5,
-          worstRating: 0
-        },
         datePublished: review.published,
         dateModified: review.updated,
         reviewBody: review.quickVerdict
-      },
+      };
+    if (typeof review.scores.aiCreatorHubScore.score === "number") {
+      reviewSchema.reviewRating = {
+          "@type": "Rating",
+          ratingValue: review.scores.aiCreatorHubScore.score,
+          bestRating: 10,
+          worstRating: 0
+        };
+    }
+    return [
+      reviewSchema,
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -375,9 +403,10 @@
   const renderReview = (source, options = {}) => {
     const review = normalizeReview(source, options.allReviews || []);
     const prefix = options.fromNested ? "../" : "";
-    const officialDisabled = publicUrl(review.officialWebsite) ? "" : ' aria-disabled="true"';
-    const affiliateHref = review.affiliateUrl || "#";
-    const affiliateLabel = review.affiliateUrl ? "Check Partner Offer" : "Affiliate Link Placeholder";
+    const officialWebsite = publicUrl(review.officialWebsite);
+    const affiliateHref = publicUrl(review.affiliateUrl);
+    const scores = review.scores;
+    const badges = scores.aiCreatorHubScore.badges?.length ? scores.aiCreatorHubScore.badges : [review.badge].filter(Boolean);
 
     return `
       <section class="review-hero engine-review-hero section">
@@ -388,18 +417,21 @@
             <h1>${escapeHtml(review.name)} Review</h1>
             <p class="lede">${escapeHtml(review.shortDescription)}</p>
             <div class="engine-hero-actions">
-              <a class="button" href="${escapeHtml(review.officialWebsite)}" target="_blank" rel="nofollow noopener"${officialDisabled}>Official Website</a>
-              <a class="button button--ghost" href="${escapeHtml(affiliateHref)}" rel="sponsored nofollow">${escapeHtml(affiliateLabel)}</a>
+              ${officialWebsite ? `<a class="button" href="${escapeHtml(officialWebsite)}" target="_blank" rel="nofollow noopener noreferrer">Official Website</a>` : ""}
+              ${affiliateHref ? `<a class="button button--ghost" href="${escapeHtml(affiliateHref)}" target="_blank" rel="sponsored nofollow noopener noreferrer">${escapeHtml(review.affiliateCtaLabel)}</a>` : ""}
             </div>
           </div>
           <aside class="review-score-card reveal" aria-label="${escapeHtml(review.name)} review summary">
-            <span class="rating rating--large">${review.overallRating ? `${review.overallRating.toFixed(1)}/5` : "Pending"}</span>
-            <h2>${escapeHtml(review.bestFor[0] || "Best fit pending")}</h2>
+            <span class="rating rating--large">${scoreText(scores.aiCreatorHubScore.score)}</span>
+            <h2>${escapeHtml(scores.aiCreatorHubScore.label || review.bestFor[0] || "Score pending")}</h2>
             <dl>
               <div><dt>Current Version</dt><dd>${escapeHtml(review.currentVersion)}</dd></div>
-              <div><dt>Overall Rating</dt><dd>${review.overallRating ? `${review.overallRating.toFixed(1)} out of 5` : "Pending hands-on scoring"}</dd></div>
+              <div><dt>AI Creator Hub Score</dt><dd>${scoreText(scores.aiCreatorHubScore.score)}</dd></div>
+              <div><dt>Community Score</dt><dd>${scoreText(scores.communityScore.score)}${scores.communityScore.sentiment ? ` (${escapeHtml(scores.communityScore.sentiment)})` : ""}</dd></div>
+              <div><dt>Confidence</dt><dd>${escapeHtml(scores.confidence)}</dd></div>
               <div><dt>Best For</dt><dd>${escapeHtml(sentence(review.bestFor))}</dd></div>
             </dl>
+            ${badges.length ? `<div class="badge-row">${badges.map((badge) => `<span>${escapeHtml(badge)}</span>`).join("")}</div>` : ""}
           </aside>
         </div>
       </section>
@@ -445,7 +477,7 @@
       ${section("Comparison Suggestions", list(review.comparisonSuggestions))}
       ${section("Frequently Asked Questions", faqItems(review.faqs))}
       ${section("Final Verdict", `<p>${escapeHtml(review.finalVerdict)}</p>`)}
-      ${section("Affiliate Disclosure", `<p>${escapeHtml(review.affiliateDisclosure)}</p><p class="fine-print">Links marked as partner or affiliate links may earn ${BRAND} a commission at no additional cost to readers.</p>`)}
+      ${affiliateHref ? section("Affiliate Disclosure", `<p>${escapeHtml(review.affiliateDisclosure)}</p><p class="fine-print">Links marked as partner or affiliate links may earn ${BRAND} a commission at no additional cost to readers.</p>`) : ""}
     `;
   };
 

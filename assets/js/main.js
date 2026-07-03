@@ -35,27 +35,31 @@
     return fromNestedReviewPage ? `../${href}` : href;
   };
 
-  const starRating = (rating) => {
-    const filled = Math.round(rating);
-    const stars = Array.from({ length: 5 }, (_, index) =>
-      `<span class="${index < filled ? "is-filled" : ""}" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3.7 2.35 4.76 5.25.76-3.8 3.7.9 5.23L12 15.68l-4.7 2.47.9-5.23-3.8-3.7 5.25-.76L12 3.7Z"/></svg></span>`
-    ).join("");
-
-    return `<span class="star-rating" aria-label="${rating.toFixed(1)} out of 5 stars">${stars}</span>`;
+  const scoreModel = (review) => review.scores || {
+    aiCreatorHubScore: { score: null, label: "Pending", badges: [] },
+    communityScore: { score: null, sentiment: "Pending", status: "Pending" },
+    confidence: "Limited"
   };
+
+  const scoreText = (score) =>
+    typeof score === "number" ? `${score.toFixed(1)} / 10` : "Pending";
 
   const reviewCard = (review) => `
     <article class="review-card reveal" data-category="${review.category.toLowerCase()}">
       <div class="review-card__top">
         <span class="tool-chip">${review.category}</span>
         <div class="review-card__score">
-          ${starRating(review.rating)}
-          <span class="rating" aria-label="${review.rating} out of 5">${review.rating.toFixed(1)}</span>
+          <span class="rating">${scoreText(scoreModel(review).aiCreatorHubScore.score)}</span>
+          <small>AI Creator Hub Score</small>
         </div>
       </div>
       <h3>${review.name}</h3>
       <span class="review-card__badge">${review.badge}</span>
       <p>${review.summary}</p>
+      <div class="public-score-strip">
+        <span><strong>Community</strong>${scoreText(scoreModel(review).communityScore.score)}</span>
+        <span><strong>Confidence</strong>${scoreModel(review).confidence}</span>
+      </div>
       <div class="review-card__lists">
         <div>
           <strong>Pros</strong>
@@ -183,14 +187,6 @@
     });
   };
 
-  const scoreBar = ([label, value]) => `
-    <div class="score-row">
-      <span>${label}</span>
-      <div class="score-row__track" aria-hidden="true"><i style="width: ${value * 10}%"></i></div>
-      <strong>${value.toFixed(1)}</strong>
-    </div>
-  `;
-
   const renderReviewDetail = () => {
     const detail = document.querySelector("[data-review-detail]");
     if (!detail) return;
@@ -221,6 +217,7 @@
       return;
     }
 
+    const scores = scoreModel(review);
     detail.innerHTML = `
       <section class="review-hero section">
         <div class="container review-hero__grid">
@@ -235,11 +232,13 @@
             </div>
           </div>
           <aside class="review-score-card reveal" aria-label="${review.name} score summary">
-            <span class="rating rating--large">${review.rating.toFixed(1)}/5</span>
+            <span class="rating rating--large">${scoreText(scores.aiCreatorHubScore.score)}</span>
             <h2>${review.badge}</h2>
             <p>${review.verdict}</p>
             <dl>
               <div><dt>Category</dt><dd>${review.category}</dd></div>
+              <div><dt>Community Score</dt><dd>${scoreText(scores.communityScore.score)} ${scores.communityScore.sentiment ? `(${scores.communityScore.sentiment})` : ""}</dd></div>
+              <div><dt>Confidence</dt><dd>${scores.confidence}</dd></div>
               <div><dt>Updated</dt><dd>${formatDate(review.published)}</dd></div>
               <div><dt>Pricing</dt><dd>${review.pricing}</dd></div>
             </dl>
@@ -257,9 +256,12 @@
             <ul class="check-list">${review.useCases.map((item) => `<li>${item}</li>`).join("")}</ul>
           </article>
           <aside class="content-panel reveal">
-            <h2>Score Breakdown</h2>
-            <div class="score-list">
-              ${Object.entries(review.scoreBreakdown).map(scoreBar).join("")}
+            <h2>Score Summary</h2>
+            <div class="engine-fact-grid">
+              <div><span>AI Creator Hub Score</span><strong>${scoreText(scores.aiCreatorHubScore.score)}</strong></div>
+              <div><span>Community Score</span><strong>${scoreText(scores.communityScore.score)}</strong></div>
+              <div><span>Confidence</span><strong>${scores.confidence}</strong></div>
+              <div><span>Verdict</span><strong>${review.badge}</strong></div>
             </div>
           </aside>
         </div>
@@ -280,7 +282,7 @@
         <div class="container narrow content-panel reveal">
           <h2>Editorial Note</h2>
           <p>This placeholder review is structured for a deeper hands-on article. Add screenshots, pricing tables, feature tests, alternatives, and final recommendations as the review is expanded.</p>
-          <p class="fine-print">Some links may become affiliate links. Ratings should be updated after direct testing and pricing verification.</p>
+          <p class="fine-print">Some links may become affiliate links. Scores should be updated after direct testing, pricing verification, and editorial review.</p>
         </div>
       </section>
     `;
@@ -293,11 +295,12 @@
         name: review.name,
         applicationCategory: review.category
       },
-      reviewRating: {
+      reviewRating: scores.aiCreatorHubScore.score ? {
         "@type": "Rating",
-        ratingValue: review.rating,
-        bestRating: 5
-      },
+        ratingValue: scores.aiCreatorHubScore.score,
+        bestRating: 10,
+        worstRating: 0
+      } : undefined,
       author: {
         "@type": "Organization",
         name: "AI Creator Hub"

@@ -638,6 +638,14 @@ textarea {
   gap: 0.5rem;
 }
 
+.review-card__score small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .tool-chip,
 .review-card__badge {
   display: inline-flex;
@@ -660,20 +668,6 @@ textarea {
   text-transform: none;
 }
 
-.star-rating {
-  display: inline-flex;
-  gap: 0.1rem;
-  color: rgba(255, 209, 102, 0.28);
-  font-size: 0.96rem;
-  letter-spacing: 0;
-  line-height: 1;
-}
-
-.star-rating .is-filled {
-  color: var(--gold);
-  text-shadow: 0 0 16px rgba(255, 209, 102, 0.26);
-}
-
 .rating {
   display: inline-flex;
   align-items: center;
@@ -684,6 +678,30 @@ textarea {
   color: var(--gold);
   font-weight: 900;
   padding: 0.26rem 0.54rem;
+}
+
+.public-score-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.public-score-strip span {
+  display: grid;
+  gap: 0.18rem;
+  border: 1px solid rgba(180, 196, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--soft);
+  font-size: 0.82rem;
+  padding: 0.62rem;
+}
+
+.public-score-strip strong {
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .rating--large {
@@ -1784,21 +1802,6 @@ body::after {
 
 .review-card p {
   color: #b8c2df;
-}
-
-.star-rating {
-  gap: 0.16rem;
-}
-
-.star-rating span {
-  display: inline-flex;
-}
-
-.star-rating svg {
-  width: 0.98rem;
-  height: 0.98rem;
-  fill: currentColor;
-  stroke: currentColor;
 }
 
 .review-card__lists {
