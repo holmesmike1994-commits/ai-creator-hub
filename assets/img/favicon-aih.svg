@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="AI Creator Hub AIH mark">
+  <defs>
+    <linearGradient id="aih-stroke" x1="12" y1="18" x2="84" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#37e2ff"/>
+      <stop offset=".5" stop-color="#2f7cff"/>
+      <stop offset="1" stop-color="#a44dff"/>
+    </linearGradient>
+    <linearGradient id="aih-text" x1="26" y1="38" x2="72" y2="59" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".6" stop-color="#e8f3ff"/>
+      <stop offset="1" stop-color="#b99cff"/>
+    </linearGradient>
+  </defs>
+  <path d="M48 7 83.5 27.5v41L48 89 12.5 68.5v-41L48 7Z" fill="#080d1d" stroke="url(#aih-stroke)" stroke-width="5.5" stroke-linejoin="round"/>
+  <path d="M48 16 75.7 32v32L48 80 20.3 64V32L48 16Z" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1.4" stroke-linejoin="round"/>
+  <text x="48" y="58" text-anchor="middle" fill="url(#aih-text)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="29" font-weight="900" letter-spacing="-2.2">AIH</text>
+</svg>

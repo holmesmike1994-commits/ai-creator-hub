@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="AI Creator Hub AIH mark">
+  <defs>
+    <linearGradient id="aih-stroke" x1="12" y1="18" x2="84" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#37e2ff"/>
+      <stop offset=".5" stop-color="#2f7cff"/>
+      <stop offset="1" stop-color="#a44dff"/>
+    </linearGradient>
+    <linearGradient id="aih-text" x1="26" y1="38" x2="72" y2="59" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".6" stop-color="#e8f3ff"/>
+      <stop offset="1" stop-color="#b99cff"/>
+    </linearGradient>
+    <filter id="aih-glow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.22 0 0 0 0 0.58 0 0 0 0 1 0 0 0 .45 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path d="M48 7 83.5 27.5v41L48 89 12.5 68.5v-41L48 7Z" fill="#080d1d" stroke="url(#aih-stroke)" stroke-width="5.5" stroke-linejoin="round" filter="url(#aih-glow)"/>
+  <path d="M48 16 75.7 32v32L48 80 20.3 64V32L48 16Z" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1.4" stroke-linejoin="round"/>
+  <text x="48" y="58" text-anchor="middle" fill="url(#aih-text)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="29" font-weight="900" letter-spacing="-2.2">AIH</text>
+  <path d="M48 20v9m-17 2-7-4m41 4 7-4M31 65l-7 4m41-4 7 4M48 67v9" stroke="url(#aih-stroke)" stroke-width="1.8" stroke-linecap="round" opacity=".78"/>
+  <circle cx="48" cy="29" r="2.15" fill="#37e2ff"/>
+  <circle cx="24" cy="27" r="2.15" fill="#2f7cff"/>
+  <circle cx="72" cy="27" r="2.15" fill="#a44dff"/>
+</svg>

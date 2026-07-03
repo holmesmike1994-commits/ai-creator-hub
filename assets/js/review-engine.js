@@ -1,0 +1,467 @@
+(function () {
+  const BRAND = "AI Creator Hub";
+  const TAGLINE = "Discover. Compare. Choose Better AI.";
+  const SOURCE_CHECKLIST = [
+    "Official product website",
+    "Official documentation",
+    "Pricing pages",
+    "Release notes",
+    "Public feature lists",
+    "Well-established public user sentiment"
+  ];
+
+  const escapeHtml = (value) =>
+    String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  const slugify = (value) =>
+    String(value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/&/g, " and ")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+
+  const sentence = (items) => items.filter(Boolean).join(", ");
+
+  const ensureArray = (value, fallback = []) => {
+    if (Array.isArray(value) && value.length) return value;
+    if (typeof value === "string" && value.trim()) return [value.trim()];
+    return fallback;
+  };
+
+  const publicUrl = (href) => href && href !== "#" ? href : "";
+
+  const nowDate = () => new Date().toISOString().slice(0, 10);
+
+  const defaultFaqs = (review) => [
+    {
+      question: `What is ${review.name}?`,
+      answer: `${review.name} is reviewed by ${BRAND} as a ${review.category} tool. Verify current positioning, feature claims, and availability against official product sources before publication.`
+    },
+    {
+      question: `Who is ${review.name} best for?`,
+      answer: `${review.name} is best suited for ${sentence(review.bestFor)}. The final recommendation should be updated after hands-on testing and pricing verification.`
+    },
+    {
+      question: `Does ${review.name} have a free trial?`,
+      answer: `${review.name}'s free trial status should be confirmed from the official pricing page because AI product plans and limits change frequently.`
+    },
+    {
+      question: `How much does ${review.name} cost?`,
+      answer: `Pricing for ${review.name} should be verified from the official pricing page. This template stores pricing context separately so the review can be updated quickly.`
+    },
+    {
+      question: `What are the main benefits of ${review.name}?`,
+      answer: `${review.name}'s main benefits depend on the workflow, but the review should evaluate output quality, ease of use, pricing fit, integrations, and reliability.`
+    },
+    {
+      question: `What are the main drawbacks of ${review.name}?`,
+      answer: `The review should clearly state ${review.name}'s limitations, including pricing friction, missing features, workflow constraints, or uncertainty that could affect buying decisions.`
+    },
+    {
+      question: `What are the best alternatives to ${review.name}?`,
+      answer: `The best alternatives to ${review.name} depend on the buyer's category and use case. This review template automatically links competing tools from the same AI category when available.`
+    },
+    {
+      question: `Is ${review.name} worth it?`,
+      answer: `${review.name} is worth considering if its strongest use cases match your workflow and its pricing makes sense after testing. The final verdict should reflect current product evidence, not hype.`
+    }
+  ];
+
+  const buildSeo = (review) => {
+    const slug = review.slug || slugify(review.name);
+    const title = `${review.name} Review: Pricing, Pros, Cons & Alternatives | ${BRAND}`;
+    const metaDescription = `${review.name} review for ${review.category.toLowerCase()} buyers. Compare pricing, features, pros, cons, use cases, alternatives, and final verdict.`;
+    const keywords = [
+      `${review.name} review`,
+      `${review.name} pricing`,
+      `${review.name} alternatives`,
+      `${review.category} AI tools`,
+      `${review.name} pros and cons`,
+      `${review.name} vs competitors`
+    ];
+
+    return {
+      title,
+      metaDescription,
+      slug,
+      canonicalPath: `reviews/${slug}.html`,
+      openGraph: {
+        title,
+        description: metaDescription,
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title,
+        description: metaDescription
+      },
+      keywords,
+      linkSuggestions: [
+        "../reviews.html",
+        `../categories.html#${slugify(review.category)}`,
+        "../affiliate-disclosure.html",
+        "../privacy-policy.html"
+      ]
+    };
+  };
+
+  const normalizeReview = (source, allReviews = []) => {
+    const name = source.name || source.toolName || "Untitled AI Tool";
+    const category = source.category || "AI Tools";
+    const slug = source.slug || slugify(name);
+    const bestFor = ensureArray(source.bestFor || source.idealFor, [
+      `${category} buyers`,
+      "AI evaluators",
+      "teams comparing tools"
+    ]);
+    const shortDescription =
+      source.shortDescription ||
+      source.summary ||
+      `${name} is a ${category.toLowerCase()} product. This review should be completed after checking official sources and hands-on testing.`;
+    const verdict =
+      source.quickVerdict ||
+      source.verdict ||
+      `${name} is worth evaluating if your workflow matches its strongest use cases, but pricing, platform support, and current feature claims should be verified from official sources before making a recommendation.`;
+    const officialWebsite = source.officialWebsite || source.website || "#";
+    const affiliateUrl = source.affiliateUrl || source.affiliateURL || "";
+    const rating = Number(source.overallRating || source.rating || 0) || 0;
+    const sameCategory = allReviews
+      .filter((item) => item.name !== name && item.category === category)
+      .slice(0, 4);
+    const alternatives = ensureArray(source.alternatives, sameCategory.map((item) => ({
+      name: item.name,
+      category: item.category,
+      url: item.url || `reviews/${item.slug || slugify(item.name)}.html`,
+      summary: item.summary || `A competing ${category.toLowerCase()} option.`
+    }))).slice(0, 6);
+
+    const review = {
+      ...source,
+      name,
+      slug,
+      category,
+      currentVersion: source.currentVersion || "Current version pending official verification",
+      overallRating: rating,
+      shortDescription,
+      bestFor,
+      officialWebsite,
+      affiliateUrl,
+      quickVerdict: verdict,
+      developer: source.developer || "Pending official verification",
+      pricing: source.pricing || "Pending official pricing verification",
+      platforms: ensureArray(source.platforms, ["Web or supported platforms pending verification"]),
+      freeTrial: source.freeTrial || "Pending official verification",
+      api: source.api || "Pending official verification",
+      pros: ensureArray(source.pros, [
+        "Clear value proposition for the right workflow",
+        "Potential to save time when matched to the correct use case",
+        "Worth testing against category alternatives"
+      ]),
+      cons: ensureArray(source.cons, [
+        "Pricing and usage limits should be verified before buying",
+        "Feature claims may change as the product evolves",
+        "Hands-on testing is required before final recommendation"
+      ]),
+      whatIsIt:
+        source.whatIsIt ||
+        `${name} is categorized by ${BRAND} as a ${category.toLowerCase()} tool. A complete review should explain what the product does, who built it, how it fits into a creator or business workflow, and which claims are supported by official sources.`,
+      keyFeatures: ensureArray(source.keyFeatures, [
+        {
+          title: "Core workflow",
+          description: `Document the main workflow ${name} supports after reviewing official product pages and documentation.`
+        },
+        {
+          title: "Output quality",
+          description: "Evaluate output quality with practical examples instead of repeating marketing claims."
+        },
+        {
+          title: "Integrations and platform fit",
+          description: "Confirm supported platforms, integrations, API access, and export options from official sources."
+        }
+      ]),
+      pricingTable: ensureArray(source.pricingTable, [
+        { plan: "Free or Trial", price: "Verify", bestFor: "Initial testing", notes: "Confirm current limits from official pricing." },
+        { plan: "Paid Plan", price: "Verify", bestFor: "Regular use", notes: "Confirm features, seats, and usage limits." },
+        { plan: "Business or Enterprise", price: "Verify", bestFor: "Teams", notes: "Confirm security, support, and admin controls." }
+      ]),
+      whoShouldBuy: ensureArray(source.whoShouldBuy, [
+        `Teams that need a ${category.toLowerCase()} solution and are willing to test quality before subscribing.`,
+        "Buyers who want to compare pricing, workflow fit, and alternatives before committing.",
+        "Creators or operators whose use case matches the product's strongest documented features."
+      ]),
+      whoShouldSkip: ensureArray(source.whoShouldSkip, [
+        "Buyers who need guaranteed feature availability that has not been verified.",
+        "Teams that cannot validate pricing, data handling, or usage limits before adoption.",
+        "Users whose workflow is better served by a simpler or more specialized alternative."
+      ]),
+      useCases: ensureArray(source.realWorldUseCases || source.useCases, [
+        `Test ${name} against a real ${category.toLowerCase()} workflow before buying.`,
+        "Compare output quality with at least two competing products.",
+        "Document time saved, accuracy, collaboration fit, and handoff requirements."
+      ]),
+      alternatives,
+      comparisonSuggestions: ensureArray(source.comparisonSuggestions, alternatives.length
+        ? alternatives.map((item) => `Compare ${name} vs ${item.name}`).slice(0, 4)
+        : [`Compare ${name} vs leading ${category} alternatives`]),
+      faqs: ensureArray(source.faqs, []),
+      finalVerdict:
+        source.finalVerdict ||
+        `The final recommendation for ${name} should be based on verified pricing, documented features, current product limits, and hands-on results. ${BRAND} should clearly separate confirmed facts from editorial judgment.`,
+      affiliateDisclosure:
+        source.affiliateDisclosure ||
+        `${BRAND} may earn a commission if readers purchase through affiliate links. Affiliate relationships do not determine ratings, rankings, or recommendations.`,
+      sources: ensureArray(source.sources, SOURCE_CHECKLIST.map((name) => ({ name, status: "Required before publication" }))),
+      published: source.published || nowDate(),
+      updated: source.updated || source.published || nowDate()
+    };
+
+    review.faqs = review.faqs.length >= 8 ? review.faqs.slice(0, 8) : defaultFaqs(review);
+    review.seo = { ...buildSeo(review), ...(source.seo || {}) };
+    return review;
+  };
+
+  const list = (items, className = "check-list") =>
+    `<ul class="${className}">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+
+  const featureCards = (features) => `
+    <div class="engine-card-grid">
+      ${features.map((feature) => `
+        <article class="engine-mini-card">
+          <h3>${escapeHtml(feature.title || feature)}</h3>
+          <p>${escapeHtml(feature.description || "Feature details should be verified from official sources.")}</p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+
+  const pricingTable = (rows) => `
+    <div class="engine-table-wrap">
+      <table class="engine-table">
+        <thead><tr><th>Plan</th><th>Price</th><th>Best For</th><th>Notes</th></tr></thead>
+        <tbody>
+          ${rows.map((row) => `
+            <tr>
+              <td>${escapeHtml(row.plan)}</td>
+              <td>${escapeHtml(row.price)}</td>
+              <td>${escapeHtml(row.bestFor)}</td>
+              <td>${escapeHtml(row.notes)}</td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  const alternativeCards = (alternatives, basePrefix) => `
+    <div class="engine-card-grid">
+      ${alternatives.map((item) => {
+        const href = item.url && /^https?:/i.test(item.url) ? item.url : `${basePrefix}${item.url || `reviews/${slugify(item.name)}.html`}`;
+        return `
+          <article class="engine-mini-card">
+            <span class="tool-chip">${escapeHtml(item.category || "Alternative")}</span>
+            <h3>${escapeHtml(item.name)}</h3>
+            <p>${escapeHtml(item.summary || "Competing tool to evaluate in the same workflow.")}</p>
+            <a href="${escapeHtml(href)}">View alternative</a>
+          </article>
+        `;
+      }).join("")}
+    </div>
+  `;
+
+  const faqItems = (faqs) => `
+    <div class="faq-list">
+      ${faqs.map((faq) => `
+        <details class="faq-item">
+          <summary>${escapeHtml(faq.question)}</summary>
+          <p>${escapeHtml(faq.answer)}</p>
+        </details>
+      `).join("")}
+    </div>
+  `;
+
+  const section = (title, body, eyebrow = "") => `
+    <section class="engine-section">
+      <div class="container narrow content-panel reveal">
+        ${eyebrow ? `<p class="eyebrow">${escapeHtml(eyebrow)}</p>` : ""}
+        <h2>${escapeHtml(title)}</h2>
+        ${body}
+      </div>
+    </section>
+  `;
+
+  const schemaScripts = (review, baseUrl = "") => {
+    const canonical = `${baseUrl}${review.seo.canonicalPath || `reviews/${review.slug}.html`}`;
+    return [
+      {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        itemReviewed: {
+          "@type": "SoftwareApplication",
+          name: review.name,
+          applicationCategory: review.category,
+          operatingSystem: review.platforms.join(", "),
+          url: publicUrl(review.officialWebsite)
+        },
+        author: { "@type": "Organization", name: BRAND },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: review.overallRating || 0,
+          bestRating: 5,
+          worstRating: 0
+        },
+        datePublished: review.published,
+        dateModified: review.updated,
+        reviewBody: review.quickVerdict
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: review.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer }
+        }))
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: baseUrl || "../index.html" },
+          { "@type": "ListItem", position: 2, name: "Reviews", item: `${baseUrl}reviews.html` },
+          { "@type": "ListItem", position: 3, name: `${review.name} Review`, item: canonical }
+        ]
+      }
+    ];
+  };
+
+  const injectSchemas = (review) => {
+    document.querySelectorAll("script[data-engine-schema]").forEach((script) => script.remove());
+    schemaScripts(review).forEach((schema) => {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.dataset.engineSchema = "true";
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    });
+  };
+
+  const updateMeta = (review) => {
+    document.title = review.seo.title;
+    const ensureMeta = (selector, attrs) => {
+      let meta = document.head.querySelector(selector);
+      if (!meta) {
+        meta = document.createElement("meta");
+        document.head.appendChild(meta);
+      }
+      Object.entries(attrs).forEach(([key, value]) => meta.setAttribute(key, value));
+    };
+    ensureMeta('meta[name="description"]', { name: "description", content: review.seo.metaDescription });
+    ensureMeta('meta[name="keywords"]', { name: "keywords", content: review.seo.keywords.join(", ") });
+    ensureMeta('meta[property="og:title"]', { property: "og:title", content: review.seo.openGraph.title });
+    ensureMeta('meta[property="og:description"]', { property: "og:description", content: review.seo.openGraph.description });
+    ensureMeta('meta[property="og:type"]', { property: "og:type", content: review.seo.openGraph.type });
+    ensureMeta('meta[name="twitter:card"]', { name: "twitter:card", content: review.seo.twitterCard.card });
+    ensureMeta('meta[name="twitter:title"]', { name: "twitter:title", content: review.seo.twitterCard.title });
+    ensureMeta('meta[name="twitter:description"]', { name: "twitter:description", content: review.seo.twitterCard.description });
+  };
+
+  const renderReview = (source, options = {}) => {
+    const review = normalizeReview(source, options.allReviews || []);
+    const prefix = options.fromNested ? "../" : "";
+    const officialDisabled = publicUrl(review.officialWebsite) ? "" : ' aria-disabled="true"';
+    const affiliateHref = review.affiliateUrl || "#";
+    const affiliateLabel = review.affiliateUrl ? "Check Partner Offer" : "Affiliate Link Placeholder";
+
+    return `
+      <section class="review-hero engine-review-hero section">
+        <div class="container review-hero__grid">
+          <div>
+            <a class="breadcrumb" href="${prefix}reviews.html">Reviews</a>
+            <p class="eyebrow">${escapeHtml(review.category)} Review</p>
+            <h1>${escapeHtml(review.name)} Review</h1>
+            <p class="lede">${escapeHtml(review.shortDescription)}</p>
+            <div class="engine-hero-actions">
+              <a class="button" href="${escapeHtml(review.officialWebsite)}" target="_blank" rel="nofollow noopener"${officialDisabled}>Official Website</a>
+              <a class="button button--ghost" href="${escapeHtml(affiliateHref)}" rel="sponsored nofollow">${escapeHtml(affiliateLabel)}</a>
+            </div>
+          </div>
+          <aside class="review-score-card reveal" aria-label="${escapeHtml(review.name)} review summary">
+            <span class="rating rating--large">${review.overallRating ? `${review.overallRating.toFixed(1)}/5` : "Pending"}</span>
+            <h2>${escapeHtml(review.bestFor[0] || "Best fit pending")}</h2>
+            <dl>
+              <div><dt>Current Version</dt><dd>${escapeHtml(review.currentVersion)}</dd></div>
+              <div><dt>Overall Rating</dt><dd>${review.overallRating ? `${review.overallRating.toFixed(1)} out of 5` : "Pending hands-on scoring"}</dd></div>
+              <div><dt>Best For</dt><dd>${escapeHtml(sentence(review.bestFor))}</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+      ${section("Quick Verdict", `<p>${escapeHtml(review.quickVerdict)}</p>`)}
+      <section class="engine-section">
+        <div class="container content-panel reveal">
+          <p class="eyebrow">At a Glance</p>
+          <h2>At a Glance</h2>
+          <div class="engine-fact-grid">
+            ${[
+              ["Developer", review.developer],
+              ["Category", review.category],
+              ["Pricing", review.pricing],
+              ["Platforms", review.platforms.join(", ")],
+              ["Free Trial", review.freeTrial],
+              ["API", review.api],
+              ["Best For", sentence(review.bestFor)]
+            ].map(([label, value]) => `<div><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="engine-section">
+        <div class="container two-column">
+          <article class="content-panel reveal">
+            <p class="eyebrow">Pros</p>
+            <h2>Pros</h2>
+            ${list(review.pros, "check-list engine-check-list")}
+          </article>
+          <article class="content-panel reveal">
+            <p class="eyebrow">Cons</p>
+            <h2>Cons</h2>
+            ${list(review.cons, "minus-list engine-check-list")}
+          </article>
+        </div>
+      </section>
+      ${section("What Is It?", `<p>${escapeHtml(review.whatIsIt)}</p>`)}
+      ${section("Key Features", featureCards(review.keyFeatures))}
+      ${section("Pricing", pricingTable(review.pricingTable))}
+      ${section("Who Should Buy It?", list(review.whoShouldBuy))}
+      ${section("Who Should Skip It?", list(review.whoShouldSkip, "minus-list engine-check-list"))}
+      ${section("Real World Use Cases", list(review.useCases))}
+      ${section("Alternatives", alternativeCards(review.alternatives, prefix))}
+      ${section("Comparison Suggestions", list(review.comparisonSuggestions))}
+      ${section("Frequently Asked Questions", faqItems(review.faqs))}
+      ${section("Final Verdict", `<p>${escapeHtml(review.finalVerdict)}</p>`)}
+      ${section("Affiliate Disclosure", `<p>${escapeHtml(review.affiliateDisclosure)}</p><p class="fine-print">Links marked as partner or affiliate links may earn ${BRAND} a commission at no additional cost to readers.</p>`)}
+    `;
+  };
+
+  const renderInto = (container, source, options = {}) => {
+    const review = normalizeReview(source, options.allReviews || []);
+    container.innerHTML = renderReview(review, options);
+    updateMeta(review);
+    injectSchemas(review);
+    return review;
+  };
+
+  window.AICHReviewEngine = {
+    slugify,
+    normalizeReview,
+    renderReview,
+    renderInto,
+    schemaScripts
+  };
+})();

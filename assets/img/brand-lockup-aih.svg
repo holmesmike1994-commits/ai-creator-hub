@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" role="img" aria-label="AI Creator Hub - Discover. Compare. Choose Better AI.">
+  <defs>
+    <linearGradient id="lock-stroke" x1="12" y1="24" x2="122" y2="126" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#37e2ff"/>
+      <stop offset=".5" stop-color="#2f7cff"/>
+      <stop offset="1" stop-color="#a44dff"/>
+    </linearGradient>
+    <linearGradient id="lock-ai" x1="165" y1="43" x2="246" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#37e2ff"/>
+      <stop offset=".52" stop-color="#2f7cff"/>
+      <stop offset="1" stop-color="#a44dff"/>
+    </linearGradient>
+    <linearGradient id="lock-text" x1="42" y1="63" x2="106" y2="87" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".62" stop-color="#e8f3ff"/>
+      <stop offset="1" stop-color="#b99cff"/>
+    </linearGradient>
+  </defs>
+  <path d="M75 11 129 42v66L75 139 21 108V42L75 11Z" fill="#080d1d" stroke="url(#lock-stroke)" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M75 24 117.4 48.5v49L75 122 32.6 97.5v-49L75 24Z" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="75" y="87" text-anchor="middle" fill="url(#lock-text)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="39" font-weight="900" letter-spacing="-3">AIH</text>
+  <path d="M75 29v12m-24 3-10-6m58 6 10-6M51 106l-10 6m58-6 10 6M75 109v12" stroke="url(#lock-stroke)" stroke-width="2" stroke-linecap="round" opacity=".78"/>
+  <text x="165" y="78" fill="url(#lock-ai)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="46" font-weight="850">AI</text>
+  <text x="240" y="78" fill="#f8fbff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="46" font-weight="760">Creator Hub</text>
+  <line x1="166" y1="105" x2="215" y2="105" stroke="#2f7cff" stroke-width="2.5"/>
+  <text x="235" y="112" fill="#37e2ff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="760" letter-spacing="6">DISCOVER.</text>
+  <text x="365" y="112" fill="#a44dff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="760" letter-spacing="6">COMPARE.</text>
+  <text x="500" y="112" fill="#ffffff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="760" letter-spacing="5">CHOOSE BETTER AI.</text>
+</svg>

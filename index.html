@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Creator Hub | Discover, Compare, and Choose Better AI</title>
+  <meta name="description" content="AI Creator Hub helps creators, developers, and businesses discover, compare, and choose better AI tools with trusted reviews and pricing guides.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="AI Creator Hub | Discover, Compare, and Choose Better AI">
+  <meta property="og:description" content="AI Creator Hub helps creators, developers, and businesses discover, compare, and choose better AI tools with trusted reviews and pricing guides.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon-aih.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preload" href="assets/img/hero-dashboard.webp" as="image" type="image/webp">
+</head>
+<body data-active="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav" aria-label="Primary navigation">
+  <a class="brand" href="index.html" aria-label="AI Creator Hub home"><span class="brand__mark" aria-hidden="true">AIH</span><span>AI Creator Hub</span></a>
+  <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="primary-navigation" aria-expanded="false"><span></span></button>
+  <nav class="nav__links" id="primary-navigation">
+    <a href="index.html" data-nav="home">Home</a>
+    <a href="reviews.html" data-nav="reviews">Reviews</a>
+    <a href="categories.html" data-nav="categories">Categories</a>
+    <a href="about.html" data-nav="about">About</a>
+    <a href="contact.html" data-nav="contact">Contact</a>
+  </nav></div></header>
+  <main class="main" id="main">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">Discover. Compare. Choose Better AI.</p>
+          <h1>Find the Best AI Tools Before You Spend a Dollar.</h1>
+          <p class="lede">Trusted reviews, side-by-side comparisons, pricing guides, and honest recommendations for creators, developers, and businesses.</p>
+          <form class="tool-search" role="search" data-tool-search>
+            <label class="sr-only" for="home-tool-search">Search AI tools, reviews, or categories</label>
+            <span class="tool-search__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <input class="field tool-search__input" id="home-tool-search" type="search" placeholder="Search AI tools, reviews, or categories..." autocomplete="off" data-search-input>
+            <button class="button" type="submit">Search</button>
+            <div class="search-results" data-search-results aria-live="polite"></div>
+          </form>
+          <div class="hero-actions"><a class="button" href="reviews.html">Explore AI Reviews</a><a class="button button--ghost" href="categories.html">Browse Categories</a></div>
+          <div class="hero-stats" aria-label="Site highlights"><div class="stat"><strong>6</strong><span>tools scored</span></div><div class="stat"><strong>7</strong><span>AI categories</span></div><div class="stat"><strong>500+</strong><span>review engine ready</span></div></div>
+        </div>
+        <div class="hero__visual reveal">
+          <picture><source srcset="assets/img/hero-dashboard.webp" type="image/webp"><img src="assets/img/hero-dashboard.png" width="1280" height="800" alt="Dark AI review dashboard with tool cards and comparison analytics" fetchpriority="high"></picture>
+          <div class="hero-metric hero-metric--top"><span>Decision score</span><strong>4.8 best fit</strong></div>
+          <div class="hero-metric hero-metric--side"><span>Pricing lens</span><strong>Free vs paid</strong></div>
+          <div class="floating-note" aria-label="Editorial promise"><strong>Tested for real workflows.</strong><p>Use cases, pricing context, output quality, and tradeoffs in one decision view.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--compact" aria-labelledby="categories-title"><div class="container"><div class="section__head"><div><p class="eyebrow">Quick Category Browser</p><h2 id="categories-title">Start with the job you need AI to do.</h2></div><a class="button button--ghost" href="categories.html">View Category Map</a></div><div class="grid category-grid category-grid--home" data-category-list></div></div></section>
+    <section class="section section--tight" aria-labelledby="featured-title"><div class="container"><div class="section__head"><div><p class="eyebrow">Featured AI Tools</p><h2 id="featured-title">Shortlist smarter before you subscribe.</h2></div><a class="button button--ghost" href="reviews.html">All Reviews</a></div><div class="grid review-grid" data-review-grid="featured" data-limit="3"></div></div></section>
+    <section class="section section--tight" aria-labelledby="latest-title"><div class="container"><div class="section__head"><div><p class="eyebrow">Latest Reviews</p><h2 id="latest-title">Fresh signals from the AI tool market.</h2></div><p>Each review is structured around outcomes, limitations, pricing fit, and the kind of team that should care.</p></div><div class="grid review-grid" data-review-grid="latest" data-limit="3"></div></div></section>
+    <section class="section section--tight" aria-labelledby="comparisons-title"><div class="container"><div class="section__head"><div><p class="eyebrow">Popular Comparisons</p><h2 id="comparisons-title">The buying questions people actually ask.</h2></div></div><div class="grid comparison-grid">
+      <article class="comparison-card reveal"><span class="comparison-card__label">Chatbots</span><h3 class="sr-only">ChatGPT vs Claude</h3><div class="comparison-matchup" aria-label="ChatGPT versus Claude"><strong>ChatGPT</strong><span>VS</span><strong>Claude</strong></div><p>Compare workflow fit, pricing, quality, limitations, and buying confidence.</p></article>
+      <article class="comparison-card reveal"><span class="comparison-card__label">Coding</span><h3 class="sr-only">Cursor vs GitHub Copilot</h3><div class="comparison-matchup" aria-label="Cursor versus GitHub Copilot"><strong>Cursor</strong><span>VS</span><strong>GitHub Copilot</strong></div><p>Compare workflow fit, pricing, quality, limitations, and buying confidence.</p></article>
+      <article class="comparison-card reveal"><span class="comparison-card__label">Video and Voice</span><h3 class="sr-only">HeyGen vs ElevenLabs</h3><div class="comparison-matchup" aria-label="HeyGen versus ElevenLabs"><strong>HeyGen</strong><span>VS</span><strong>ElevenLabs</strong></div><p>Compare workflow fit, pricing, quality, limitations, and buying confidence.</p></article>
+      <article class="comparison-card reveal"><span class="comparison-card__label">Images</span><h3 class="sr-only">Canva AI vs Midjourney</h3><div class="comparison-matchup" aria-label="Canva AI versus Midjourney"><strong>Canva AI</strong><span>VS</span><strong>Midjourney</strong></div><p>Compare workflow fit, pricing, quality, limitations, and buying confidence.</p></article>
+      <article class="comparison-card reveal"><span class="comparison-card__label">Explainers</span><h3 class="sr-only">InstaDoodle vs Doodly</h3><div class="comparison-matchup" aria-label="InstaDoodle versus Doodly"><strong>InstaDoodle</strong><span>VS</span><strong>Doodly</strong></div><p>Compare workflow fit, pricing, quality, limitations, and buying confidence.</p></article>
+    </div></div></section>
+    <section class="section section--tight" aria-labelledby="trust-title"><div class="container"><div class="section__head"><div><p class="eyebrow">Why Trust AI Creator Hub</p><h2 id="trust-title">Built for decisions, not clickbait.</h2></div><p>We organize AI tools around what they help you decide: whether to test, buy, replace, or ignore them.</p></div><div class="grid trust-grid"><article class="trust-card reveal"><span class="trust-card__icon" aria-hidden="true">01</span><h3>Workflow-first testing</h3><p>Reviews focus on creator, developer, and business workflows instead of feature checklists alone.</p></article><article class="trust-card reveal"><span class="trust-card__icon" aria-hidden="true">02</span><h3>Pricing context</h3><p>We look at free plans, upgrade triggers, usage limits, and whether a paid plan makes sense.</p></article><article class="trust-card reveal"><span class="trust-card__icon" aria-hidden="true">03</span><h3>Clear tradeoffs</h3><p>Pros, cons, fit, and caveats stay visible so recommendations feel useful before they feel persuasive.</p></article></div></div></section>
+    <section class="newsletter section" aria-labelledby="newsletter-title"><div class="container newsletter__inner"><div><p class="eyebrow">Newsletter</p><h2 id="newsletter-title">Get sharper AI buying decisions in your inbox.</h2><p class="lede">A frontend-only signup UI is ready for your email provider when you connect one.</p></div><form class="form-card" data-frontend-form><label for="newsletter-email">Email address</label><div class="input-row"><input class="field" id="newsletter-email" name="email" type="email" placeholder="creator@example.com" autocomplete="email" required><button class="button" type="submit">Join Newsletter</button></div><p class="form-message" data-form-message aria-live="polite"></p></form></div></section>
+  </main>
+  <footer class="site-footer"></footer>
+
+  <script src="assets/js/reviews-data.js" defer></script>
+  <script src="assets/js/review-engine.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
