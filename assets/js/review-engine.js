@@ -137,8 +137,10 @@
       source.quickVerdict ||
       source.verdict ||
       `${name} is worth evaluating if your workflow matches its strongest use cases, but pricing, platform support, and current feature claims should be verified from official sources before making a recommendation.`;
-    const officialWebsite = publicUrl(source.officialWebsite || source.website);
-    const affiliateUrl = source.affiliateUrl || source.affiliateURL || "";
+    const officialWebsite = publicUrl(source.officialWebsite || source.website || source.affiliate?.officialWebsite);
+    const affiliateUrl = source.affiliateUrl || source.affiliateURL || source.affiliate?.affiliateUrl || "";
+    const cleanAffiliateUrl = publicUrl(affiliateUrl);
+    const officialWebsiteButtonUrl = publicUrl(source.officialWebsiteButtonUrl || source.primaryCtaUrl || cleanAffiliateUrl || officialWebsite);
     const scores = source.scores || {
       aiCreatorHubScore: {
         score: null,
@@ -173,7 +175,9 @@
       shortDescription,
       bestFor,
       officialWebsite,
-      affiliateUrl: publicUrl(affiliateUrl),
+      officialWebsiteButtonUrl,
+      primaryCtaUrl: publicUrl(source.primaryCtaUrl || officialWebsiteButtonUrl),
+      affiliateUrl: cleanAffiliateUrl,
       affiliateCtaLabel: source.affiliateCtaLabel || source.ctaLabel || `Get ${name}`,
       quickVerdict: verdict,
       developer: source.developer || "Pending official verification",
@@ -404,7 +408,11 @@
     const review = normalizeReview(source, options.allReviews || []);
     const prefix = options.fromNested ? "../" : "";
     const officialWebsite = publicUrl(review.officialWebsite);
+    const officialCtaHref = publicUrl(review.officialWebsiteButtonUrl || review.primaryCtaUrl || review.affiliateUrl || officialWebsite);
     const affiliateHref = publicUrl(review.affiliateUrl);
+    const officialRel = affiliateHref && officialCtaHref === affiliateHref
+      ? "sponsored nofollow noopener noreferrer"
+      : "nofollow noopener noreferrer";
     const scores = review.scores;
     const badges = scores.aiCreatorHubScore.badges?.length ? scores.aiCreatorHubScore.badges : [review.badge].filter(Boolean);
 
@@ -417,7 +425,7 @@
             <h1>${escapeHtml(review.name)} Review</h1>
             <p class="lede">${escapeHtml(review.shortDescription)}</p>
             <div class="engine-hero-actions">
-              ${officialWebsite ? `<a class="button" href="${escapeHtml(officialWebsite)}" target="_blank" rel="nofollow noopener noreferrer">Official Website</a>` : ""}
+              ${officialCtaHref ? `<a class="button" href="${escapeHtml(officialCtaHref)}" target="_blank" rel="${officialRel}">Official Website</a>` : ""}
               ${affiliateHref ? `<a class="button button--ghost" href="${escapeHtml(affiliateHref)}" target="_blank" rel="sponsored nofollow noopener noreferrer">${escapeHtml(review.affiliateCtaLabel)}</a>` : ""}
             </div>
           </div>

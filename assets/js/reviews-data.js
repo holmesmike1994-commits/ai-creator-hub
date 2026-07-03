@@ -93,6 +93,8 @@ window.AICHReviews = [
     category: "Images",
     officialWebsite: "https://instadoodle.com/",
     affiliateUrl: "https://95f81no1m0whse-f-f07hgwzrn.hop.clickbank.net",
+    officialWebsiteButtonUrl: "https://95f81no1m0whse-f-f07hgwzrn.hop.clickbank.net",
+    primaryCtaUrl: "https://95f81no1m0whse-f-f07hgwzrn.hop.clickbank.net",
     affiliateCtaLabel: "Get InstaDoodle",
     scores: {
       aiCreatorHubScore: { score: 8.7, label: "Great", status: "Official", badges: [] },
