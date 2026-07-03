@@ -11,7 +11,6 @@
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/img/favicon-aih.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="preload" href="assets/img/hero-dashboard.webp" as="image" type="image/webp">
 </head>
 <body data-active="home">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -40,13 +39,38 @@
             <div class="search-results" data-search-results aria-live="polite"></div>
           </form>
           <div class="hero-actions"><a class="button" href="reviews.html">Explore AI Reviews</a><a class="button button--ghost" href="categories.html">Browse Categories</a></div>
-          <div class="hero-stats" aria-label="Site highlights"><div class="stat"><strong>6</strong><span>tools evaluated</span></div><div class="stat"><strong>7</strong><span>AI categories</span></div><div class="stat"><strong>500+</strong><span>review engine ready</span></div></div>
+          <div class="hero-stats" aria-label="Site highlights"><div class="stat"><strong>6</strong><span>tools evaluated</span></div><div class="stat"><strong>7</strong><span>AI categories</span></div><div class="stat"><strong>Live</strong><span>featured evaluation</span></div></div>
         </div>
         <div class="hero__visual reveal">
-          <picture><source srcset="assets/img/hero-dashboard.webp" type="image/webp"><img src="assets/img/hero-dashboard.png" width="1280" height="800" alt="Dark AI review dashboard with tool cards and comparison analytics" fetchpriority="high"></picture>
-          <div class="hero-metric hero-metric--top"><span>AI Creator Hub Score</span><strong>9.6 top pick</strong></div>
-          <div class="hero-metric hero-metric--side"><span>Pricing lens</span><strong>Free vs paid</strong></div>
-          <div class="floating-note" aria-label="Editorial promise"><strong>Tested for real workflows.</strong><p>Use cases, pricing context, output quality, and tradeoffs in one decision view.</p></div>
+          <article class="hero-feature-card" aria-labelledby="hero-feature-title">
+            <p class="eyebrow">Featured Evaluation</p>
+            <div class="hero-feature-card__head">
+              <div>
+                <h2 id="hero-feature-title">InstaDoodle</h2>
+                <p>Fast doodle-style visuals for education, social content, and simple marketing funnels.</p>
+              </div>
+              <span class="hero-feature-card__mark" aria-hidden="true">ID</span>
+            </div>
+            <div class="hero-feature-scores" aria-label="InstaDoodle score summary">
+              <div><span>AI Creator Hub Score</span><strong>8.7 / 10</strong></div>
+              <div><span>Community Score</span><strong>8.1 / 10</strong></div>
+              <div><span>Confidence</span><strong>Moderate</strong></div>
+            </div>
+            <div class="hero-feature-fit">
+              <span>Best for:</span>
+              <ul>
+                <li>Educators</li>
+                <li>Solo creators</li>
+                <li>Social media teams</li>
+                <li>Coaches</li>
+                <li>Explainer videos</li>
+              </ul>
+            </div>
+            <div class="hero-feature-actions">
+              <a class="button" href="reviews/instadoodle.html">Read Evaluation</a>
+              <a class="button button--ghost" href="https://95f81no1m0whse-f-f07hgwzrn.hop.clickbank.net" target="_blank" rel="sponsored nofollow noopener noreferrer">Visit Official Website</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
