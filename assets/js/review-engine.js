@@ -334,8 +334,17 @@
     }
   };
 
+  const breadcrumbPage = (name, url) => ({
+    "@type": "WebPage",
+    "@id": url,
+    url,
+    name
+  });
+
   const schemaScripts = (review, baseUrl = SITE_BASE_URL) => {
     const canonical = absoluteUrl(review.seo.canonicalPath || `reviews/${review.slug}.html`, baseUrl);
+    const homeUrl = absoluteUrl("", baseUrl);
+    const reviewsUrl = absoluteUrl("reviews.html", baseUrl);
     const reviewSchema = {
         "@context": "https://schema.org",
         "@type": "Review",
@@ -374,9 +383,9 @@
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("", baseUrl) },
-          { "@type": "ListItem", position: 2, name: "Reviews", item: absoluteUrl("reviews.html", baseUrl) },
-          { "@type": "ListItem", position: 3, name: `${review.name} Review`, item: canonical }
+          { "@type": "ListItem", position: 1, name: "Home", item: breadcrumbPage("Home", homeUrl) },
+          { "@type": "ListItem", position: 2, name: "Reviews", item: breadcrumbPage("Reviews", reviewsUrl) },
+          { "@type": "ListItem", position: 3, name: `${review.name} Review`, item: breadcrumbPage(`${review.name} Review`, canonical) }
         ]
       }
     ];
