@@ -273,6 +273,172 @@ window.AICHReviews = [
     pros: ["Natural voice quality", "Good control over delivery", "Useful for multilingual content"],
     cons: ["Usage can scale costs quickly", "Voice rights need careful handling", "Fine tuning takes experimentation"],
     useCases: ["Video narration", "Podcast intros", "Product walkthroughs", "Dubbing"]
+  },
+  {
+    slug: "doodly",
+    name: "Doodly",
+    category: "Video",
+    officialWebsite: "https://www.doodly.com/",
+    scores: {
+      aiCreatorHubScore: { score: 8.2, label: "Very Good", status: "Official", badges: ["Established whiteboard animation tool"] },
+      communityScore: { score: 8.1, sentiment: "Positive", status: "Estimated" },
+      confidence: "Moderate"
+    },
+    badge: "Established whiteboard animation tool",
+    summary: "Doodly is a whiteboard and doodle-video creation platform for educators, marketers, coaches, and creators who want explainer videos without building every animation from scratch.",
+    verdict: "Doodly is worth considering if you want a proven doodle-video workflow and prefer a template-driven animation tool over a broad AI video generator.",
+    idealFor: ["Educators", "course creators", "coaches", "small businesses"],
+    currentVersion: "Current web and desktop-supported version",
+    developer: "Voomly Cloud / Doodly",
+    pricing: "Official pricing page lists Standard at $49/month or $490/year and Enterprise at $79/month or $790/year. Verify current offers, trials, and checkout terms before buying.",
+    platforms: ["Web", "Windows", "Mac"],
+    freeTrial: "The current pricing page includes try-for-free calls to action; verify current trial terms before signing up.",
+    api: "No public API confirmed for this review.",
+    featured: false,
+    published: "2026-07-04",
+    updated: "2026-07-04",
+    url: "reviews/doodly.html",
+    pros: [
+      "Focused whiteboard animation workflow with a clear use case",
+      "Large built-in asset library for characters, props, music, scenes, and templates",
+      "Good fit for explainers, lessons, training videos, and simple sales presentations",
+      "More established than many newer doodle-style tools"
+    ],
+    cons: [
+      "Not a general-purpose AI video generator",
+      "The doodle aesthetic will not fit every brand or campaign",
+      "Pricing and bundled Voomly Cloud access should be checked carefully before purchase",
+      "Teams needing cinematic video, avatar presenters, or advanced editing may need another tool"
+    ],
+    whatIsIt: "Doodly is a whiteboard animation and doodle-video tool designed to help non-animators create explainer-style videos. Its main value is speed: instead of designing scenes from a blank canvas, creators can assemble visuals from characters, props, templates, music, and scene assets.",
+    keyFeatures: [
+      {
+        title: "Whiteboard animation builder",
+        description: "Create doodle-style videos with hand-drawn visual effects for teaching, explaining, marketing, and storytelling."
+      },
+      {
+        title: "Built-in media library",
+        description: "The official pricing page lists character images, prop images, royalty-free music, templates, fonts, and scene templates by plan."
+      },
+      {
+        title: "Unlimited video creation",
+        description: "Official plan descriptions currently list unlimited video creation, but buyers should verify current export, storage, and usage terms."
+      },
+      {
+        title: "Voomly Cloud bundle",
+        description: "Current plans include access to related Voomly Cloud tools, which may matter if you want hosting, funnels, or adjacent video workflows."
+      }
+    ],
+    pricingTable: [
+      {
+        plan: "Standard Monthly",
+        price: "$49/month",
+        bestFor: "Creators testing Doodly regularly",
+        notes: "Official pricing lists Standard assets, templates, standard support, Voomly Cloud access, and 7TB cloud storage."
+      },
+      {
+        plan: "Enterprise Monthly",
+        price: "$79/month",
+        bestFor: "Creators who need more assets and premium support",
+        notes: "Official pricing lists larger character, prop, music, template, and font libraries plus premium support and 10TB storage."
+      },
+      {
+        plan: "Annual Plans",
+        price: "$490/year or $790/year",
+        bestFor: "Committed users who want annual billing",
+        notes: "Verify current annual billing terms, trial terms, refund policy, and any checkout promotions before purchase."
+      }
+    ],
+    whoShouldBuy: [
+      "Educators who need simple visual lessons and explainer videos.",
+      "Coaches and consultants who want repeatable whiteboard-style content.",
+      "Small businesses making sales explainers, training clips, or lightweight presentations.",
+      "Creators who prefer a structured animation tool over building every visual manually."
+    ],
+    whoShouldSkip: [
+      "Teams that need realistic AI avatars, cinematic video, or advanced post-production editing.",
+      "Brands whose visual identity does not fit a hand-drawn or doodle-video style.",
+      "Buyers who need broad AI image generation rather than an explainer-video workflow.",
+      "Anyone unwilling to verify current plan limits, trial terms, and checkout details before subscribing."
+    ],
+    useCases: [
+      "Create whiteboard explainer videos for courses and tutorials.",
+      "Turn a sales message into a simple animated presentation.",
+      "Build training videos for internal processes or client onboarding.",
+      "Create short educational clips for YouTube, social media, or lead magnets."
+    ],
+    alternatives: [
+      {
+        name: "InstaDoodle",
+        category: "Images",
+        url: "reviews/instadoodle.html",
+        summary: "A better fit for fast doodle-style visual assets and lightweight explainer graphics."
+      },
+      {
+        name: "HeyGen",
+        category: "Video",
+        url: "reviews/heygen.html",
+        summary: "A stronger choice when you need presenter-led or avatar-based videos."
+      },
+      {
+        name: "Canva AI",
+        category: "Images",
+        url: "reviews/canva-ai.html",
+        summary: "A broader design platform for branded graphics, presentations, and social content."
+      },
+      {
+        name: "ElevenLabs",
+        category: "Voice",
+        url: "reviews/elevenlabs.html",
+        summary: "A useful companion if your explainer workflow needs polished AI narration."
+      }
+    ],
+    comparisonSuggestions: [
+      "Compare Doodly vs InstaDoodle",
+      "Compare Doodly vs HeyGen",
+      "Compare Doodly vs Canva AI",
+      "Compare Doodly vs Toonly"
+    ],
+    faqs: [
+      {
+        question: "What is Doodly?",
+        answer: "Doodly is a whiteboard animation and doodle-video creation tool for building explainer videos, educational clips, sales presentations, and simple animated stories."
+      },
+      {
+        question: "Who is Doodly best for?",
+        answer: "Doodly is best for educators, course creators, coaches, consultants, small businesses, and marketers who want doodle-style explainer videos without hiring an animator."
+      },
+      {
+        question: "How much does Doodly cost?",
+        answer: "The official Doodly pricing page currently lists Standard at $49/month or $490/year and Enterprise at $79/month or $790/year. Always verify current pricing and checkout terms before buying."
+      },
+      {
+        question: "Does Doodly have a free trial?",
+        answer: "Doodly's current pricing page includes try-for-free calls to action, but buyers should verify the exact trial, billing, and cancellation terms on the official website."
+      },
+      {
+        question: "Is Doodly an AI video generator?",
+        answer: "Doodly is best understood as a whiteboard animation and doodle-video creation tool, not a broad AI video generator or avatar-video platform."
+      },
+      {
+        question: "What are the main Doodly drawbacks?",
+        answer: "The main drawbacks are its niche doodle aesthetic, subscription pricing, and limited fit for teams that need cinematic editing, avatar presenters, or broad AI video generation."
+      },
+      {
+        question: "What are the best Doodly alternatives?",
+        answer: "Good Doodly alternatives depend on the workflow. InstaDoodle is a natural doodle-style comparison, HeyGen is better for avatar videos, and Canva AI is broader for design work."
+      },
+      {
+        question: "Is Doodly worth it?",
+        answer: "Doodly is worth considering if you regularly create explainer videos and the doodle style fits your audience. It is less compelling if you need a broader AI video or design platform."
+      }
+    ],
+    finalVerdict: "Doodly earns an AI Creator Hub Score of 8.2 / 10. It is not trying to be the newest all-purpose AI video platform, and that is part of the point. For creators who need whiteboard explainers, training clips, educational videos, and simple animated sales content, Doodly remains a focused and useful option. The main buying caution is to verify current pricing, trial terms, bundled Voomly Cloud access, and whether the doodle style fits your brand before subscribing.",
+    sources: [
+      { name: "Official Doodly website", url: "https://www.doodly.com/", status: "Reviewed" },
+      { name: "Official Doodly pricing page", url: "https://www.doodly.com/doodly-pricing", status: "Reviewed" },
+      { name: "Public user sentiment", status: "Estimated from well-known review patterns; verify before major editorial updates" }
+    ]
   }
 ];
 
