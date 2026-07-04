@@ -17,6 +17,24 @@ window.AICHReviews = [
     featured: true,
     published: "2026-06-19",
     url: "reviews/chatgpt.html",
+    seo: {
+      title: "ChatGPT Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+      metaDescription: "Read our ChatGPT review with AI Creator Hub Score, pricing notes, use cases, pros, cons, alternatives, and who should use it.",
+      canonicalPath: "reviews/chatgpt.html",
+      keywords: ["ChatGPT review","ChatGPT pricing","ChatGPT alternatives","ChatGPT pros and cons","best AI chatbot","AI assistant review","ChatGPT for creators"],
+      openGraph: {
+        title: "ChatGPT Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our ChatGPT review with AI Creator Hub Score, pricing notes, use cases, pros, cons, alternatives, and who should use it.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "ChatGPT Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our ChatGPT review with AI Creator Hub Score, pricing notes, use cases, pros, cons, alternatives, and who should use it.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
     pros: ["Excellent all-around quality", "Strong writing and analysis workflows", "Useful multimodal capabilities"],
     cons: ["Advanced usage can require a paid plan", "Outputs still need fact-checking", "Team governance depends on plan"],
     useCases: ["Draft content briefs", "Summarize research", "Create launch plans", "Prototype code"]
@@ -39,6 +57,24 @@ window.AICHReviews = [
     featured: true,
     published: "2026-06-14",
     url: "reviews/claude.html",
+    seo: {
+      title: "Claude Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+      metaDescription: "Read our Claude review with AI Creator Hub Score, pricing notes, writing use cases, pros, cons, alternatives, and buying guidance.",
+      canonicalPath: "reviews/claude.html",
+      keywords: ["Claude review","Claude pricing","Claude alternatives","Claude pros and cons","best AI chatbot","AI writing assistant","Claude AI review"],
+      openGraph: {
+        title: "Claude Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our Claude review with AI Creator Hub Score, pricing notes, writing use cases, pros, cons, alternatives, and buying guidance.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "Claude Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our Claude review with AI Creator Hub Score, pricing notes, writing use cases, pros, cons, alternatives, and buying guidance.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
     pros: ["Excellent tone control", "Strong document analysis", "Comfortable long-context workflows"],
     cons: ["Some workflows depend on availability limits", "Less broad plugin ecosystem", "Not always the fastest for quick snippets"],
     useCases: ["Review strategy docs", "Edit articles", "Analyze policies", "Summarize interviews"]
@@ -61,6 +97,24 @@ window.AICHReviews = [
     featured: true,
     published: "2026-06-08",
     url: "reviews/cursor.html",
+    seo: {
+      title: "Cursor Review: AI Coding Pricing, Pros & Alternatives | AI Creator Hub",
+      metaDescription: "Read our Cursor review with AI Creator Hub Score, pricing notes, developer use cases, pros, cons, alternatives, and final verdict.",
+      canonicalPath: "reviews/cursor.html",
+      keywords: ["Cursor review","Cursor pricing","Cursor alternatives","Cursor pros and cons","AI coding tool","AI code editor","Cursor vs GitHub Copilot"],
+      openGraph: {
+        title: "Cursor Review: AI Coding Pricing, Pros & Alternatives | AI Creator Hub",
+        description: "Read our Cursor review with AI Creator Hub Score, pricing notes, developer use cases, pros, cons, alternatives, and final verdict.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "Cursor Review: AI Coding Pricing, Pros & Alternatives | AI Creator Hub",
+        description: "Read our Cursor review with AI Creator Hub Score, pricing notes, developer use cases, pros, cons, alternatives, and final verdict.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
     pros: ["Deep codebase context", "Fast refactor workflows", "Great fit for existing editor habits"],
     cons: ["Can be noisy on large tasks", "Model quality varies by selection", "Requires disciplined review of generated code"],
     useCases: ["Refactor modules", "Generate tests", "Explain unfamiliar code", "Build prototypes"]
@@ -83,6 +137,24 @@ window.AICHReviews = [
     featured: true,
     published: "2026-05-28",
     url: "reviews/heygen.html",
+    seo: {
+      title: "HeyGen Review: AI Avatar Video Pricing & Alternatives | AI Creator Hub",
+      metaDescription: "Read our HeyGen review with AI Creator Hub Score, avatar video use cases, pricing notes, pros, cons, alternatives, and verdict.",
+      canonicalPath: "reviews/heygen.html",
+      keywords: ["HeyGen review","HeyGen pricing","HeyGen alternatives","AI avatar video","AI video generator","HeyGen pros and cons","avatar video software"],
+      openGraph: {
+        title: "HeyGen Review: AI Avatar Video Pricing & Alternatives | AI Creator Hub",
+        description: "Read our HeyGen review with AI Creator Hub Score, avatar video use cases, pricing notes, pros, cons, alternatives, and verdict.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "HeyGen Review: AI Avatar Video Pricing & Alternatives | AI Creator Hub",
+        description: "Read our HeyGen review with AI Creator Hub Score, avatar video use cases, pricing notes, pros, cons, alternatives, and verdict.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
     pros: ["Polished avatar output", "Great for localized videos", "Reduces production overhead"],
     cons: ["Realism depends on avatar and script quality", "Higher-volume use can get expensive", "Needs brand review for public campaigns"],
     useCases: ["Product explainers", "Sales outreach", "Training videos", "Localized announcements"]
@@ -114,6 +186,24 @@ window.AICHReviews = [
     published: "2026-07-03",
     updated: "2026-07-03",
     url: "reviews/instadoodle.html",
+    seo: {
+      title: "InstaDoodle Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+      metaDescription: "Read our InstaDoodle review with AI Creator Hub Score, Community Score, pricing notes, pros, cons, alternatives, FAQs, and final verdict.",
+      canonicalPath: "reviews/instadoodle.html",
+      keywords: ["InstaDoodle review","InstaDoodle pricing","InstaDoodle alternatives","InstaDoodle pros and cons","doodle-style visual tool","whiteboard animation software","InstaDoodle lifetime deal"],
+      openGraph: {
+        title: "InstaDoodle Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our InstaDoodle review with AI Creator Hub Score, Community Score, pricing notes, pros, cons, alternatives, FAQs, and final verdict.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "InstaDoodle Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our InstaDoodle review with AI Creator Hub Score, Community Score, pricing notes, pros, cons, alternatives, FAQs, and final verdict.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
     pros: [
       "Fast doodle-style workflow for simple visual explainers",
       "Lower learning curve than full design or animation suites",
@@ -270,6 +360,24 @@ window.AICHReviews = [
     featured: true,
     published: "2026-05-06",
     url: "reviews/elevenlabs.html",
+    seo: {
+      title: "ElevenLabs Review: AI Voice Pricing & Alternatives | AI Creator Hub",
+      metaDescription: "Read our ElevenLabs review with AI Creator Hub Score, voice generation use cases, pricing notes, pros, cons, alternatives, and verdict.",
+      canonicalPath: "reviews/elevenlabs.html",
+      keywords: ["ElevenLabs review","ElevenLabs pricing","ElevenLabs alternatives","AI voice generator","AI narration tool","text to speech software","AI dubbing tool"],
+      openGraph: {
+        title: "ElevenLabs Review: AI Voice Pricing & Alternatives | AI Creator Hub",
+        description: "Read our ElevenLabs review with AI Creator Hub Score, voice generation use cases, pricing notes, pros, cons, alternatives, and verdict.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "ElevenLabs Review: AI Voice Pricing & Alternatives | AI Creator Hub",
+        description: "Read our ElevenLabs review with AI Creator Hub Score, voice generation use cases, pricing notes, pros, cons, alternatives, and verdict.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
     pros: ["Natural voice quality", "Good control over delivery", "Useful for multilingual content"],
     cons: ["Usage can scale costs quickly", "Voice rights need careful handling", "Fine tuning takes experimentation"],
     useCases: ["Video narration", "Podcast intros", "Product walkthroughs", "Dubbing"]
@@ -298,6 +406,24 @@ window.AICHReviews = [
     published: "2026-07-04",
     updated: "2026-07-04",
     url: "reviews/doodly.html",
+    seo: {
+      title: "Doodly Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+      metaDescription: "Read our Doodly review with AI Creator Hub Score, whiteboard animation pricing, pros, cons, alternatives, FAQs, and final verdict.",
+      canonicalPath: "reviews/doodly.html",
+      keywords: ["Doodly review","Doodly pricing","Doodly alternatives","Doodly pros and cons","whiteboard animation software","doodle video maker","Doodly vs InstaDoodle"],
+      openGraph: {
+        title: "Doodly Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our Doodly review with AI Creator Hub Score, whiteboard animation pricing, pros, cons, alternatives, FAQs, and final verdict.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "Doodly Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our Doodly review with AI Creator Hub Score, whiteboard animation pricing, pros, cons, alternatives, FAQs, and final verdict.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
     pros: [
       "Focused whiteboard animation workflow with a clear use case",
       "Large built-in asset library for characters, props, music, scenes, and templates",
@@ -464,6 +590,24 @@ window.AICHReviews = [
     published: "2026-07-04",
     updated: "2026-07-04",
     url: "reviews/canva-ai.html",
+    seo: {
+      title: "Canva AI Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+      metaDescription: "Read our Canva AI review with AI Creator Hub Score, design workflow use cases, pricing notes, pros, cons, alternatives, and verdict.",
+      canonicalPath: "reviews/canva-ai.html",
+      keywords: ["Canva AI review","Canva AI pricing","Canva AI alternatives","AI design tool","AI graphic design software","Canva Magic Studio","Canva AI pros and cons"],
+      openGraph: {
+        title: "Canva AI Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our Canva AI review with AI Creator Hub Score, design workflow use cases, pricing notes, pros, cons, alternatives, and verdict.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "Canva AI Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our Canva AI review with AI Creator Hub Score, design workflow use cases, pricing notes, pros, cons, alternatives, and verdict.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
     pros: [
       "Very approachable AI design workflow for non-designers",
       "Strong fit for social graphics, presentations, ads, thumbnails, and brand assets",
@@ -630,6 +774,24 @@ window.AICHReviews = [
     published: "2026-07-04",
     updated: "2026-07-04",
     url: "reviews/midjourney.html",
+    seo: {
+      title: "Midjourney Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+      metaDescription: "Read our Midjourney review with AI Creator Hub Score, image generation use cases, pricing notes, pros, cons, alternatives, and verdict.",
+      canonicalPath: "reviews/midjourney.html",
+      keywords: ["Midjourney review","Midjourney pricing","Midjourney alternatives","AI image generator","AI art generator","Midjourney pros and cons","Midjourney vs Canva AI"],
+      openGraph: {
+        title: "Midjourney Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our Midjourney review with AI Creator Hub Score, image generation use cases, pricing notes, pros, cons, alternatives, and verdict.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "Midjourney Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
+        description: "Read our Midjourney review with AI Creator Hub Score, image generation use cases, pricing notes, pros, cons, alternatives, and verdict.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
     pros: [
       "Excellent artistic image quality and style exploration",
       "Strong creative community and prompt-driven workflow",

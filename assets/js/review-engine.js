@@ -403,14 +403,29 @@
       }
       Object.entries(attrs).forEach(([key, value]) => meta.setAttribute(key, value));
     };
+    const canonicalUrl = absoluteUrl(review.seo.canonicalPath || `reviews/${review.slug}.html`);
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", canonicalUrl);
     ensureMeta('meta[name="description"]', { name: "description", content: review.seo.metaDescription });
     ensureMeta('meta[name="keywords"]', { name: "keywords", content: review.seo.keywords.join(", ") });
     ensureMeta('meta[property="og:title"]', { property: "og:title", content: review.seo.openGraph.title });
     ensureMeta('meta[property="og:description"]', { property: "og:description", content: review.seo.openGraph.description });
     ensureMeta('meta[property="og:type"]', { property: "og:type", content: review.seo.openGraph.type });
+    ensureMeta('meta[property="og:url"]', { property: "og:url", content: canonicalUrl });
+    if (review.seo.openGraph.image) {
+      ensureMeta('meta[property="og:image"]', { property: "og:image", content: absoluteUrl(review.seo.openGraph.image, canonicalUrl) });
+    }
     ensureMeta('meta[name="twitter:card"]', { name: "twitter:card", content: review.seo.twitterCard.card });
     ensureMeta('meta[name="twitter:title"]', { name: "twitter:title", content: review.seo.twitterCard.title });
     ensureMeta('meta[name="twitter:description"]', { name: "twitter:description", content: review.seo.twitterCard.description });
+    if (review.seo.twitterCard.image) {
+      ensureMeta('meta[name="twitter:image"]', { name: "twitter:image", content: absoluteUrl(review.seo.twitterCard.image, canonicalUrl) });
+    }
   };
 
   const renderReview = (source, options = {}) => {
