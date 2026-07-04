@@ -1,6 +1,7 @@
 (function () {
   const BRAND = "AI Creator Hub";
   const TAGLINE = "Discover. Compare. Choose Better AI.";
+  const SITE_BASE_URL = "https://holmesmike1994-commits.github.io/ai-creator-hub/";
   const SOURCE_CHECKLIST = [
     "Official product website",
     "Official documentation",
@@ -325,8 +326,16 @@
   const scoreText = (score) =>
     typeof score === "number" ? `${score.toFixed(1)} / 10` : "Pending";
 
-  const schemaScripts = (review, baseUrl = "") => {
-    const canonical = `${baseUrl}${review.seo.canonicalPath || `reviews/${review.slug}.html`}`;
+  const absoluteUrl = (path = "", baseUrl = SITE_BASE_URL) => {
+    try {
+      return new URL(path || "", baseUrl || SITE_BASE_URL).href;
+    } catch {
+      return `${SITE_BASE_URL}${String(path || "").replace(/^\/+/, "")}`;
+    }
+  };
+
+  const schemaScripts = (review, baseUrl = SITE_BASE_URL) => {
+    const canonical = absoluteUrl(review.seo.canonicalPath || `reviews/${review.slug}.html`, baseUrl);
     const reviewSchema = {
         "@context": "https://schema.org",
         "@type": "Review",
@@ -365,8 +374,8 @@
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: baseUrl || "../index.html" },
-          { "@type": "ListItem", position: 2, name: "Reviews", item: `${baseUrl}reviews.html` },
+          { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("", baseUrl) },
+          { "@type": "ListItem", position: 2, name: "Reviews", item: absoluteUrl("reviews.html", baseUrl) },
           { "@type": "ListItem", position: 3, name: `${review.name} Review`, item: canonical }
         ]
       }
