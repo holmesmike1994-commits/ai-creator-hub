@@ -2020,6 +2020,189 @@ body::after {
   min-height: 218px;
 }
 
+.comparison-hero {
+  padding: 5.4rem 0 2.6rem;
+}
+
+.comparison-hero__grid {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.62fr);
+  gap: 1.4rem;
+}
+
+.comparison-hero h1 {
+  max-width: 960px;
+}
+
+.comparison-subtitle {
+  margin-top: 0.85rem;
+  color: var(--soft);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 850;
+}
+
+.comparison-summary-card {
+  display: grid;
+  gap: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04)),
+    var(--surface);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.comparison-duo {
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.85rem;
+}
+
+.comparison-product-card {
+  display: grid;
+  min-height: 100%;
+  gap: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 1rem;
+}
+
+.comparison-product-card h2,
+.comparison-product-card h3 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.vs-badge {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 1px solid rgba(49, 216, 255, 0.42);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.18), transparent 45%),
+    linear-gradient(135deg, rgba(124, 92, 255, 0.34), rgba(49, 216, 255, 0.22));
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 950;
+  box-shadow: 0 0 40px rgba(49, 216, 255, 0.16);
+}
+
+.comparison-score-grid {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.comparison-score-grid div,
+.winner-list li,
+.comparison-table td,
+.comparison-table th {
+  border: 1px solid rgba(180, 196, 255, 0.11);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.comparison-score-grid div {
+  display: grid;
+  gap: 0.12rem;
+  border-radius: 8px;
+  padding: 0.65rem;
+}
+
+.comparison-score-grid span,
+.comparison-table th,
+.winner-list span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.comparison-score-grid strong {
+  color: var(--soft);
+  font-size: 1.06rem;
+}
+
+.comparison-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.9rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.comparison-table td {
+  color: var(--soft);
+}
+
+.winner-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.winner-list li {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.26fr) minmax(0, 1fr);
+  gap: 0.55rem;
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+
+.winner-list strong {
+  color: var(--text);
+}
+
+.recommendation-panel {
+  border-color: rgba(99, 230, 190, 0.24);
+  background:
+    linear-gradient(135deg, rgba(99, 230, 190, 0.11), rgba(49, 216, 255, 0.06)),
+    var(--surface);
+}
+
+.related-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.related-link-grid a {
+  display: grid;
+  gap: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 0.9rem;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.related-link-grid a:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+}
+
 .site-footer {
   position: relative;
   overflow: hidden;
@@ -2134,6 +2317,16 @@ body::after {
     transform: none;
   }
 
+  .comparison-hero__grid,
+  .comparison-duo,
+  .related-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vs-badge {
+    margin-inline: auto;
+  }
+
   .footer-shell,
   .footer-link-grid {
     grid-template-columns: 1fr;
@@ -2193,6 +2386,14 @@ body::after {
 
   .comparison-card {
     min-height: 220px;
+  }
+
+  .comparison-hero {
+    padding-top: 4.4rem;
+  }
+
+  .winner-list li {
+    grid-template-columns: 1fr;
   }
 
   .footer-brand-panel,

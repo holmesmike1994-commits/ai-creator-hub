@@ -19,6 +19,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://holmesmike1994-commits.github.io/ai-creator-hub/comparisons.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://holmesmike1994-commits.github.io/ai-creator-hub/about.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -68,6 +74,12 @@
   </url>
   <url>
     <loc>https://holmesmike1994-commits.github.io/ai-creator-hub/reviews/doodly.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://holmesmike1994-commits.github.io/ai-creator-hub/comparisons/instadoodle-vs-doodly.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
