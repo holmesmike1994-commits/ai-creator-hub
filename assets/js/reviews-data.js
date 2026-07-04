@@ -439,6 +439,338 @@ window.AICHReviews = [
       { name: "Official Doodly pricing page", url: "https://www.doodly.com/doodly-pricing", status: "Reviewed" },
       { name: "Public user sentiment", status: "Estimated from well-known review patterns; verify before major editorial updates" }
     ]
+  },
+  {
+    slug: "canva-ai",
+    name: "Canva AI",
+    category: "Images",
+    officialWebsite: "https://www.canva.com/canva-ai/",
+    scores: {
+      aiCreatorHubScore: { score: 9.1, label: "Excellent", status: "Official", badges: ["Best all-in-one AI design workspace"] },
+      communityScore: { score: 8.8, sentiment: "Very Positive", status: "Estimated" },
+      confidence: "High"
+    },
+    badge: "Best all-in-one AI design workspace",
+    summary: "Canva AI brings AI design, writing, image generation, editing, and layout tools into Canva's broader creative workspace for social content, presentations, marketing assets, and brand-friendly design.",
+    verdict: "Canva AI is one of the easiest recommendations for creators and teams that want practical AI design assistance inside a familiar production workflow.",
+    idealFor: ["Creators", "marketers", "small businesses", "social media teams"],
+    currentVersion: "Current Canva AI and Magic Studio toolset",
+    developer: "Canva",
+    pricing: "Canva offers free and paid plans. AI tool access, premium features, and monthly usage limits can vary by plan, so confirm current limits on Canva's pricing and AI access pages.",
+    platforms: ["Web", "iOS", "Android", "Windows", "Mac"],
+    freeTrial: "Canva has a free plan; paid-plan trials and AI limits should be verified on the current pricing page.",
+    api: "Canva offers developer platform features, but this review focuses on the creator-facing Canva AI tools rather than API usage.",
+    featured: false,
+    published: "2026-07-04",
+    updated: "2026-07-04",
+    url: "reviews/canva-ai.html",
+    pros: [
+      "Very approachable AI design workflow for non-designers",
+      "Strong fit for social graphics, presentations, ads, thumbnails, and brand assets",
+      "AI tools are integrated directly into the Canva editor instead of feeling separate",
+      "Free and paid plans make it easy to test before committing"
+    ],
+    cons: [
+      "Advanced designers may still prefer dedicated pro tools for precise control",
+      "AI usage allowances and premium features vary by plan",
+      "Generic templates can make output feel similar unless brand controls are used carefully",
+      "Not a replacement for specialized AI art tools when image quality is the only priority"
+    ],
+    whatIsIt: "Canva AI is Canva's collection of AI-assisted design, writing, image, layout, and editing tools. The main advantage is not just generation; it is that generated ideas can move directly into editable designs, social posts, presentations, marketing layouts, and brand workflows.",
+    keyFeatures: [
+      {
+        title: "AI design generation",
+        description: "Turn prompts and source material into editable Canva layouts, campaign concepts, templates, and visual drafts."
+      },
+      {
+        title: "Magic Studio workflow",
+        description: "Use Canva's AI-powered tools for writing, design assistance, image creation, editing, and format transformation inside one creative workspace."
+      },
+      {
+        title: "Brand and template support",
+        description: "Combine AI assistance with Canva templates, brand kits, design assets, and collaboration features for repeatable content production."
+      },
+      {
+        title: "Broad publishing formats",
+        description: "Create social graphics, presentations, ads, documents, thumbnails, videos, and marketing visuals without switching tools."
+      }
+    ],
+    pricingTable: [
+      {
+        plan: "Canva Free",
+        price: "Free",
+        bestFor: "Testing Canva and basic design workflows",
+        notes: "Includes access to core Canva features; AI access and premium limits should be checked on Canva's current plan pages."
+      },
+      {
+        plan: "Canva Pro",
+        price: "Verify current price",
+        bestFor: "Solo creators and marketers",
+        notes: "Adds premium content, design tools, brand features, and expanded AI capabilities depending on current plan terms."
+      },
+      {
+        plan: "Canva Teams / Business / Enterprise",
+        price: "Verify current price",
+        bestFor: "Teams managing branded content at scale",
+        notes: "Review collaboration, admin, brand, security, and AI usage details before choosing a team plan."
+      }
+    ],
+    whoShouldBuy: [
+      "Creators who need fast social graphics, thumbnails, presentations, and campaign visuals.",
+      "Marketing teams that want AI assistance inside an editable design workflow.",
+      "Small businesses that need polished visual assets without hiring a designer for every task.",
+      "Teams that already use Canva and want AI features without changing their content process."
+    ],
+    whoShouldSkip: [
+      "Designers who need advanced pixel-level control, complex compositing, or full professional creative-suite depth.",
+      "Artists who only care about high-end standalone image generation.",
+      "Teams with strict AI usage policies that have not reviewed Canva's current AI terms.",
+      "Creators who dislike template-based design workflows."
+    ],
+    useCases: [
+      "Generate social media post ideas and turn them into editable campaign assets.",
+      "Create branded presentation drafts from rough concepts.",
+      "Produce thumbnails, ads, banners, and simple marketing graphics quickly.",
+      "Use AI writing and design suggestions to speed up content production."
+    ],
+    alternatives: [
+      {
+        name: "Midjourney",
+        category: "Images",
+        url: "reviews/midjourney.html",
+        summary: "A stronger fit when the priority is artistic image quality and prompt-driven visual generation."
+      },
+      {
+        name: "InstaDoodle",
+        category: "Images",
+        url: "reviews/instadoodle.html",
+        summary: "A more focused option for doodle-style visual explainers and simple story assets."
+      },
+      {
+        name: "Doodly",
+        category: "Video",
+        url: "reviews/doodly.html",
+        summary: "A better fit for whiteboard explainer videos and doodle animation workflows."
+      },
+      {
+        name: "HeyGen",
+        category: "Video",
+        url: "reviews/heygen.html",
+        summary: "A stronger choice when the content needs presenter-led or avatar-based video."
+      }
+    ],
+    comparisonSuggestions: [
+      "Compare Canva AI vs Midjourney",
+      "Compare Canva AI vs InstaDoodle",
+      "Compare Canva AI vs Doodly",
+      "Compare Canva AI vs HeyGen"
+    ],
+    faqs: [
+      {
+        question: "What is Canva AI?",
+        answer: "Canva AI is Canva's set of AI-powered design, writing, image generation, editing, and layout tools built into the Canva creative workspace."
+      },
+      {
+        question: "Who is Canva AI best for?",
+        answer: "Canva AI is best for creators, marketers, small businesses, social media teams, and non-designers who need fast, editable visual content."
+      },
+      {
+        question: "How much does Canva AI cost?",
+        answer: "Canva has free and paid plans. AI access, premium features, and monthly usage limits can vary by plan, so check Canva's current pricing and AI access pages before upgrading."
+      },
+      {
+        question: "Is Canva AI better than Midjourney?",
+        answer: "Canva AI is better for editable designs and marketing workflows. Midjourney is usually stronger for artistic image generation and prompt-driven visual exploration."
+      },
+      {
+        question: "Can Canva AI create social media graphics?",
+        answer: "Yes. Canva AI is especially useful for social graphics, thumbnails, ads, banners, presentations, and other reusable content formats."
+      },
+      {
+        question: "Does Canva AI replace a designer?",
+        answer: "No. Canva AI speeds up layout, ideation, and production, but brand judgment, creative direction, and final quality control still matter."
+      },
+      {
+        question: "What are the main Canva AI drawbacks?",
+        answer: "The main drawbacks are plan-based AI limits, less advanced control than professional design tools, and the risk of generic-looking output if templates are not customized."
+      },
+      {
+        question: "Is Canva AI worth it?",
+        answer: "Canva AI is worth considering if you regularly create marketing visuals or social content and want AI help inside a practical editing and publishing workflow."
+      }
+    ],
+    finalVerdict: "Canva AI earns an AI Creator Hub Score of 9.1 / 10. It is not the most specialized AI image generator, but it is one of the most useful AI design systems for real-world publishing because ideas, edits, templates, brand assets, and exports live in one place. For creators and teams that need to ship visual content quickly, Canva AI is a top-tier choice.",
+    sources: [
+      { name: "Official Canva AI page", url: "https://www.canva.com/canva-ai/", status: "Reviewed" },
+      { name: "Official Canva pricing page", url: "https://www.canva.com/en/pricing/", status: "Reviewed" },
+      { name: "Official Canva AI access help", url: "https://www.canva.com/help/ai-access/", status: "Reviewed" }
+    ]
+  },
+  {
+    slug: "midjourney",
+    name: "Midjourney",
+    category: "Images",
+    officialWebsite: "https://www.midjourney.com/",
+    scores: {
+      aiCreatorHubScore: { score: 9.0, label: "Excellent", status: "Official", badges: ["Best artistic AI image generator"] },
+      communityScore: { score: 8.9, sentiment: "Very Positive", status: "Estimated" },
+      confidence: "High"
+    },
+    badge: "Best artistic AI image generator",
+    summary: "Midjourney is a leading AI image generation platform known for distinctive visual quality, prompt-driven exploration, and strong creative output for art direction, concepting, and visual experimentation.",
+    verdict: "Midjourney is one of the strongest choices when image quality and creative exploration matter more than editable marketing layouts or all-in-one design workflow.",
+    idealFor: ["Artists", "designers", "creative directors", "concept teams"],
+    currentVersion: "Current Midjourney model and web workflow",
+    developer: "Midjourney",
+    pricing: "Official plan documentation lists Basic at $10/month, Standard at $30/month, Pro at $60/month, and Mega at $120/month, with annual discounts. Verify current GPU time, video, relax mode, and stealth-mode details before subscribing.",
+    platforms: ["Web", "Discord"],
+    freeTrial: "No free plan is listed in the official plan comparison; verify current trial availability before subscribing.",
+    api: "No official public API is confirmed for this review.",
+    featured: false,
+    published: "2026-07-04",
+    updated: "2026-07-04",
+    url: "reviews/midjourney.html",
+    pros: [
+      "Excellent artistic image quality and style exploration",
+      "Strong creative community and prompt-driven workflow",
+      "Useful for concept art, moodboards, campaigns, thumbnails, and visual ideation",
+      "Official plans offer multiple GPU-time tiers for different usage levels"
+    ],
+    cons: [
+      "Subscription required for serious use",
+      "Prompting skill and iteration still matter a lot",
+      "Not as straightforward as Canva for editable business graphics",
+      "Commercial, privacy, and usage needs should be checked against current Midjourney terms"
+    ],
+    whatIsIt: "Midjourney is an AI image generation platform for creating visuals from text prompts and creative direction. It is strongest when you need high-quality exploratory imagery, distinctive styles, concept art, moodboards, and visual directions rather than a template-based design editor.",
+    keyFeatures: [
+      {
+        title: "Prompt-based image generation",
+        description: "Create images by describing the visual direction, subject, style, composition, and constraints you want."
+      },
+      {
+        title: "High-quality creative output",
+        description: "Midjourney is widely known for strong aesthetics, visual atmosphere, and polished creative results."
+      },
+      {
+        title: "Web and Discord workflows",
+        description: "Midjourney supports creation and organization through official web tools, with Discord still part of many user workflows."
+      },
+      {
+        title: "Tiered GPU-time plans",
+        description: "Official plans differ by monthly price, annual pricing, fast GPU time, relax mode, and advanced features."
+      }
+    ],
+    pricingTable: [
+      {
+        plan: "Basic",
+        price: "$10/month or $96/year",
+        bestFor: "Testing Midjourney with lighter usage",
+        notes: "Official comparison lists 3.3 hours of monthly fast GPU time."
+      },
+      {
+        plan: "Standard",
+        price: "$30/month or $288/year",
+        bestFor: "Regular creators",
+        notes: "Official comparison lists 15 hours of fast GPU time and unlimited relax-mode images."
+      },
+      {
+        plan: "Pro / Mega",
+        price: "$60-$120/month or $576-$1,152/year",
+        bestFor: "Heavy creators, studios, and professional workflows",
+        notes: "Review current fast GPU time, stealth mode, video, and commercial requirements before subscribing."
+      }
+    ],
+    whoShouldBuy: [
+      "Artists and designers who want strong AI image quality and creative exploration.",
+      "Creative directors building moodboards, campaign concepts, and visual directions.",
+      "Creators who are willing to learn prompting and iterate for better results.",
+      "Teams that need visual inspiration more than editable business templates."
+    ],
+    whoShouldSkip: [
+      "Users who need a simple all-in-one design editor with templates, brand kits, and layout controls.",
+      "Teams that require a confirmed official public API for automated production.",
+      "Buyers who do not want a subscription or GPU-time-based workflow.",
+      "Creators who need predictable text rendering, precise layout edits, or traditional design-file control."
+    ],
+    useCases: [
+      "Generate concept art, campaign moodboards, and style explorations.",
+      "Create visual directions for thumbnails, ads, landing pages, and creative briefs.",
+      "Explore product, character, environment, and brand imagery before production.",
+      "Develop reference images for designers, illustrators, and video teams."
+    ],
+    alternatives: [
+      {
+        name: "Canva AI",
+        category: "Images",
+        url: "reviews/canva-ai.html",
+        summary: "A better fit for editable designs, social graphics, presentations, and practical marketing production."
+      },
+      {
+        name: "InstaDoodle",
+        category: "Images",
+        url: "reviews/instadoodle.html",
+        summary: "A more focused option for doodle-style explainer visuals and simple educational graphics."
+      },
+      {
+        name: "Doodly",
+        category: "Video",
+        url: "reviews/doodly.html",
+        summary: "A better choice for whiteboard animation and doodle-video explainers."
+      },
+      {
+        name: "HeyGen",
+        category: "Video",
+        url: "reviews/heygen.html",
+        summary: "A stronger option when you need avatar-led or presenter-style videos."
+      }
+    ],
+    comparisonSuggestions: [
+      "Compare Midjourney vs Canva AI",
+      "Compare Midjourney vs InstaDoodle",
+      "Compare Midjourney vs Doodly",
+      "Compare Midjourney vs HeyGen"
+    ],
+    faqs: [
+      {
+        question: "What is Midjourney?",
+        answer: "Midjourney is an AI image generation platform that creates images from prompts and creative direction."
+      },
+      {
+        question: "Who is Midjourney best for?",
+        answer: "Midjourney is best for artists, designers, creative directors, content teams, and visual storytellers who want high-quality image exploration."
+      },
+      {
+        question: "How much does Midjourney cost?",
+        answer: "Official Midjourney plan documentation lists Basic at $10/month, Standard at $30/month, Pro at $60/month, and Mega at $120/month, with annual pricing discounts."
+      },
+      {
+        question: "Does Midjourney have a free plan?",
+        answer: "The official plan comparison does not list a free plan. Verify current trial or promotional availability before subscribing."
+      },
+      {
+        question: "Is Midjourney better than Canva AI?",
+        answer: "Midjourney is generally stronger for artistic image generation. Canva AI is usually better for editable marketing designs, presentations, and template-based business content."
+      },
+      {
+        question: "Can Midjourney make marketing images?",
+        answer: "Yes, Midjourney can create campaign visuals, concept art, moodboards, thumbnails, and ad directions, but final layouts may still need editing in Canva or another design tool."
+      },
+      {
+        question: "What are the main Midjourney drawbacks?",
+        answer: "The main drawbacks are subscription cost, prompt learning curve, limited layout control, and the need to verify current usage rights and privacy options."
+      },
+      {
+        question: "Is Midjourney worth it?",
+        answer: "Midjourney is worth considering if visual quality and creative exploration are central to your workflow. It is less ideal if you mainly need editable templates or business design production."
+      }
+    ],
+    finalVerdict: "Midjourney earns an AI Creator Hub Score of 9.0 / 10. It remains one of the strongest AI image tools for visual quality, creative exploration, and art direction. It is not the easiest all-in-one design platform, but for creators who care about aesthetics and are willing to learn prompt iteration, Midjourney is still a top-tier image generator.",
+    sources: [
+      { name: "Official Midjourney website", url: "https://www.midjourney.com/", status: "Reviewed" },
+      { name: "Official Midjourney plan comparison", url: "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans", status: "Reviewed" },
+      { name: "Official Midjourney documentation", url: "https://docs.midjourney.com/hc/en-us", status: "Reviewed" }
+    ]
   }
 ];
 
