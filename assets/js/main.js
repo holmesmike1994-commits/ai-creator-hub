@@ -28,7 +28,7 @@
     youtube: '<svg viewBox="0 0 24 24"><path d="M4.5 8.5S5 6.8 6.4 6.4C7.7 6 12 6 12 6s4.3 0 5.6.4c1.4.4 1.9 2.1 1.9 2.1s.5 1.9.5 3.5-.5 3.5-.5 3.5-.5 1.7-1.9 2.1C16.3 18 12 18 12 18s-4.3 0-5.6-.4c-1.4-.4-1.9-2.1-1.9-2.1S4 13.6 4 12s.5-3.5.5-3.5ZM10.5 9.8v4.4L14.5 12l-4-2.2Z"/></svg>'
   };
 
-  const fromNestedPage = window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/comparisons/");
+  const fromNestedPage = window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/comparisons/") || window.location.pathname.includes("/recommendations/");
 
   const localHref = (href) => {
     if (/^(https?:|mailto:|tel:|#)/i.test(href)) return href;
@@ -371,6 +371,7 @@
                 <ul class="footer-list">
                   <li><a href="${localHref("reviews.html")}">Reviews</a></li>
                   <li><a href="${localHref("comparisons.html")}">Comparisons</a></li>
+                  <li><a href="${localHref("recommendations.html")}">Recommendations</a></li>
                   <li><a href="${localHref("categories.html")}">Categories</a></li>
                   <li><a href="${localHref("about.html")}">About</a></li>
                   <li><a href="${localHref("contact.html")}">Contact</a></li>

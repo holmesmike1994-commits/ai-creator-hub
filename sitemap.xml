@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://holmesmike1994-commits.github.io/ai-creator-hub/recommendations.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://holmesmike1994-commits.github.io/ai-creator-hub/about.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -87,6 +93,12 @@
   <url>
     <loc>https://holmesmike1994-commits.github.io/ai-creator-hub/comparisons/chatgpt-vs-claude.html</loc>
     <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://holmesmike1994-commits.github.io/ai-creator-hub/recommendations/whiteboard-animation.html</loc>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
