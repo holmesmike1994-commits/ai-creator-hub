@@ -333,6 +333,11 @@ window.AICHReviews = [
         description: "Compare a prompt-led cloud workflow with a mature structured animation platform."
       },
       {
+        title: "VideoScribe Review",
+        url: "reviews/videoscribe.html",
+        description: "See the complete evaluation behind the structured whiteboard comparison."
+      },
+      {
         title: "Whiteboard animation software for teachers",
         url: "guides/whiteboard-animation-software-for-teachers.html",
         description: "Choose by lesson workflow, trial access, output limits, and ease of revision."
@@ -367,6 +372,18 @@ window.AICHReviews = [
         category: "Video",
         url: "reviews/heygen.html",
         summary: "A better fit when you need presenter-led or avatar-based video content."
+      },
+      {
+        name: "VideoScribe",
+        category: "Video",
+        url: "reviews/videoscribe.html",
+        summary: "A stronger fit for trial access, documented plan limits, and structured whiteboard production."
+      },
+      {
+        name: "Animaker",
+        category: "Video",
+        url: "reviews/animaker.html",
+        summary: "A broader option for character animation, multilingual voice, templates, and teams."
       }
     ],
     comparisonSuggestions: [
@@ -586,6 +603,18 @@ window.AICHReviews = [
         category: "Voice",
         url: "reviews/elevenlabs.html",
         summary: "A useful companion if your explainer workflow needs polished AI narration."
+      },
+      {
+        name: "VideoScribe",
+        category: "Video",
+        url: "reviews/videoscribe.html",
+        summary: "A stronger choice for a no-card trial, transparent plan limits, and structured whiteboard production."
+      },
+      {
+        name: "Animaker",
+        category: "Video",
+        url: "reviews/animaker.html",
+        summary: "A broader animation suite for characters, templates, multilingual voice, and team workflows."
       }
     ],
     relatedLinks: [
@@ -600,6 +629,11 @@ window.AICHReviews = [
         description: "Compare workflow, pricing, ease of use, and creator fit."
       },
       {
+        title: "Doodly vs VideoScribe",
+        url: "comparisons/doodly-vs-videoscribe.html",
+        description: "Compare trials, plan limits, production controls, rights, and value."
+      },
+      {
         title: "Whiteboard animation software for teachers",
         url: "guides/whiteboard-animation-software-for-teachers.html",
         description: "Evaluate lesson workflow, trial access, revisions, and classroom output."
@@ -612,6 +646,7 @@ window.AICHReviews = [
     ],
     comparisonSuggestions: [
       { title: "Compare Doodly vs InstaDoodle", url: "comparisons/instadoodle-vs-doodly.html" },
+      { title: "Compare Doodly vs VideoScribe", url: "comparisons/doodly-vs-videoscribe.html" },
       { title: "Compare Doodly alternatives", url: "alternatives/doodly-alternatives.html" },
       { title: "Compare InstaDoodle vs VideoScribe", url: "comparisons/instadoodle-vs-videoscribe.html" }
     ],
@@ -1022,6 +1057,497 @@ window.AICHReviews = [
       { name: "Official Midjourney website", url: "https://www.midjourney.com/", status: "Reviewed" },
       { name: "Official Midjourney plan comparison", url: "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans", status: "Reviewed" },
       { name: "Official Midjourney documentation", url: "https://docs.midjourney.com/hc/en-us", status: "Reviewed" }
+    ]
+  },
+  {
+    slug: "videoscribe",
+    name: "VideoScribe",
+    category: "Video",
+    officialWebsite: "https://www.videoscribe.co/",
+    scores: {
+      aiCreatorHubScore: { score: 8.4, label: "Very Good", status: "Official", badges: ["Best for structured whiteboard workflows"] },
+      communityScore: { score: 8.2, sentiment: "Positive", status: "Estimated from public review platforms" },
+      confidence: "Moderate"
+    },
+    badge: "Best for structured whiteboard workflows",
+    summary: "VideoScribe is a focused whiteboard-animation platform with a guided scene workflow, a large visual library, AI-assisted scripts and images, voice tools on higher plans, and clear publishing controls.",
+    verdict: "VideoScribe is the strongest fit in this group for creators who want a dedicated whiteboard workflow with transparent plan limits, a useful no-card trial, and more production control than an instant doodle generator.",
+    idealFor: ["Educators", "instructional designers", "YouTube creators", "small businesses"],
+    currentVersion: "Current browser version; Legacy desktop access varies by plan",
+    developer: "Sparkol Limited",
+    pricing: "A 7-day trial is available. The official annual pricing view lists Lite at $12.50, Core at $18.75, and Max at $23.33 per licence per month, billed annually. Monthly rates and promotions may differ.",
+    platforms: ["Web", "VideoScribe Legacy for eligible Windows and macOS users"],
+    freeTrial: "7 days with no payment details; includes three watermarked downloads and projects up to five minutes.",
+    api: "No public VideoScribe production API was confirmed in the official documentation reviewed.",
+    featured: false,
+    published: "2026-07-11",
+    updated: "2026-07-11",
+    lastVerified: "2026-07-11",
+    url: "reviews/videoscribe.html",
+    methodology: "AI Creator Hub checked VideoScribe's official pricing page, subscription limits, trial documentation, publishing guide, AI-tool documentation, and commercial-rights guidance. Community sentiment was summarized from established public review-platform patterns without copying individual reviews. This is a source-checked editorial evaluation and does not claim a personal long-term product test.",
+    scoreMethodology: "The 8.4 score is a normalized weighted assessment of documented features, ease of use, value, performance signals, support, documentation, learning curve, and recommendation fit. Community feedback about slow rendering and stability reduced the performance component; it is not a converted five-star rating.",
+    communityConsensus: {
+      positive: "Public reviewers commonly praise VideoScribe's approachable workflow, beginner-friendly controls, whiteboard-animation style, and ability to turn instructional ideas into engaging visual explanations.",
+      negative: "Recurring complaints focus on slow rendering, performance degradation during longer editing sessions, occasional instability, and limits that become more noticeable on complex projects.",
+      overall: "Sentiment is positive for education and straightforward explainer work, with more caution from users producing longer or technically demanding videos.",
+      sources: ["G2 VideoScribe review summary and recurring themes", "Official VideoScribe plan and support documentation"]
+    },
+    seo: {
+      title: "VideoScribe Review (2026): Pricing, Pros & Cons | AI Creator Hub",
+      metaDescription: "VideoScribe review with current pricing, trial limits, AI features, exports, pros, cons, alternatives, community sentiment, and AI Creator Hub Score.",
+      canonicalPath: "reviews/videoscribe.html",
+      keywords: ["VideoScribe review", "VideoScribe pricing", "VideoScribe alternatives", "VideoScribe pros and cons", "whiteboard animation software", "VideoScribe free trial", "VideoScribe vs Doodly"],
+      openGraph: {
+        title: "VideoScribe Review (2026): Pricing, Pros & Cons | AI Creator Hub",
+        description: "A source-checked look at VideoScribe pricing, limits, AI tools, publishing, strengths, drawbacks, and alternatives.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "VideoScribe Review (2026): Pricing, Pros & Cons",
+        description: "Current plans, trial limits, AI tools, exports, pros, cons, alternatives, and editorial score.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
+    pros: [
+      "Dedicated whiteboard-animation workflow with clear scene and canvas controls",
+      "Seven-day trial requires no payment details",
+      "Core and Max include a five-million-item visual library and preview links",
+      "Useful AI image, script, and voice allowances are documented by plan",
+      "Commercial and reseller rights are explained more clearly than on many competing sites"
+    ],
+    cons: [
+      "Lite is limited to five downloads per month and five-minute videos",
+      "Custom fonts and reseller rights require Max",
+      "Public reviewers repeatedly mention slow rendering or instability on longer sessions",
+      "The specialized whiteboard style is less flexible than a broad animation suite",
+      "No public production API was confirmed during this source check"
+    ],
+    whatIsIt: "VideoScribe is a whiteboard-animation and explainer-video platform from Sparkol. It combines a structured editor with drawing hands, pens, erasers, camera movement, templates, music, voice recording, multiple canvas sizes, and a large image library. Newer plans also include usage-based AI image and script generation, while Core and Max add AI voiceover allowances. The product is designed to make a recognizable hand-drawn explanation style accessible without traditional animation software.",
+    keyFeatures: [
+      {
+        title: "Structured whiteboard editor",
+        description: "Build scenes with drawing animations, camera pans and zooms, diverse hand styles, backdrops, and landscape, square, or vertical canvases."
+      },
+      {
+        title: "Large visual library",
+        description: "Official plan documentation lists more than 9,000 images and icons for Trial and Lite, and five million assets for Core and Max."
+      },
+      {
+        title: "AI-assisted production",
+        description: "Plan-based allowances cover AI image and script generation; Core and Max also include AI voiceover minutes."
+      },
+      {
+        title: "Publishing and review links",
+        description: "Export 1080p MP4 or short GIF files. Core and Max can create browser preview links for review and feedback."
+      },
+      {
+        title: "Commercial-rights clarity",
+        description: "Paid plans include commercial use, while Max is required when charging clients for the videos or reselling the finished work."
+      },
+      {
+        title: "Education fit",
+        description: "The product supports instructional videos, student projects, training content, and education discounts documented by VideoScribe."
+      }
+    ],
+    pricingTable: [
+      {
+        plan: "Free Trial",
+        price: "$0 for 7 days",
+        bestFor: "Testing the workflow",
+        notes: "No card required; three watermarked downloads, five-minute projects, 9,000+ assets, five AI image requests, and two AI script minutes."
+      },
+      {
+        plan: "Lite Annual",
+        price: "$12.50/month per licence ($150 billed annually)",
+        bestFor: "Individual creators",
+        notes: "Five downloads monthly, five-minute videos, 9,000+ assets, and no watermark except when premium images are used."
+      },
+      {
+        plan: "Core Annual",
+        price: "$18.75/month per licence ($225 billed annually)",
+        bestFor: "Businesses and regular production",
+        notes: "Thirty downloads monthly, ten-minute videos, five million assets, preview links, and AI voiceover allowance."
+      },
+      {
+        plan: "Max Annual",
+        price: "$23.33/month per licence ($280 billed annually)",
+        bestFor: "Agencies and client work",
+        notes: "Unlimited downloads, twenty-minute videos, custom fonts, reseller rights, and the highest AI allowances. Verify current monthly prices separately."
+      }
+    ],
+    whoShouldBuy: [
+      "Educators and instructional designers making visual lessons or training modules.",
+      "YouTube creators who want a recognizable whiteboard-explainer format.",
+      "Small teams that value transparent download, duration, and licensing limits.",
+      "Agencies prepared to use Max when selling completed videos to clients."
+    ],
+    whoShouldSkip: [
+      "Creators who need cinematic editing, realistic avatar presenters, or advanced motion graphics.",
+      "Teams producing long videos that may run into scene, duration, or performance constraints.",
+      "Developers who need a confirmed self-serve video-generation API.",
+      "Anyone who dislikes the hand-drawn whiteboard aesthetic."
+    ],
+    useCases: [
+      "Turn a lesson, process, or policy into a paced visual explanation.",
+      "Create whiteboard videos for YouTube in landscape, square, or vertical formats.",
+      "Share a preview link with stakeholders before downloading the final MP4.",
+      "Build client explainers under the Max plan's reseller rights.",
+      "Generate supporting script, image, and voice assets within documented plan allowances."
+    ],
+    alternatives: [
+      {
+        name: "Doodly",
+        category: "Video",
+        url: "reviews/doodly.html",
+        summary: "A traditional desktop-supported doodle-video workflow with a large bundled library."
+      },
+      {
+        name: "InstaDoodle",
+        category: "Video",
+        url: "reviews/instadoodle.html",
+        summary: "A faster AI-assisted option when rapid doodle generation matters more than structured production controls."
+      },
+      {
+        name: "Animaker",
+        category: "Video",
+        url: "reviews/animaker.html",
+        summary: "A broader browser animation suite with character building, multilingual voice, templates, and whiteboard tools."
+      },
+      {
+        name: "Canva AI",
+        category: "Images",
+        url: "reviews/canva-ai.html",
+        summary: "A broader design workspace for presentations, social assets, simple video, and brand production."
+      }
+    ],
+    relatedLinks: [
+      {
+        title: "Doodly vs VideoScribe",
+        url: "comparisons/doodly-vs-videoscribe.html",
+        description: "Compare the two established whiteboard workflows on pricing, controls, output, and buyer fit."
+      },
+      {
+        title: "InstaDoodle vs VideoScribe",
+        url: "comparisons/instadoodle-vs-videoscribe.html",
+        description: "Compare AI-first speed with a more structured production workflow."
+      },
+      {
+        title: "Whiteboard animation software for teachers",
+        url: "guides/whiteboard-animation-software-for-teachers.html",
+        description: "Choose around lesson workflow, trial access, revisions, and classroom constraints."
+      },
+      {
+        title: "Whiteboard animation software for YouTube",
+        url: "guides/whiteboard-animation-software-for-youtube.html",
+        description: "Compare licensing, voice, output formats, and publishing workflows."
+      }
+    ],
+    comparisonSuggestions: [
+      { title: "Compare VideoScribe vs Doodly", url: "comparisons/doodly-vs-videoscribe.html" },
+      { title: "Compare VideoScribe vs InstaDoodle", url: "comparisons/instadoodle-vs-videoscribe.html" },
+      { title: "Compare VideoScribe vs Animaker", url: "reviews/animaker.html" },
+      { title: "Explore the whiteboard animation recommendation", url: "recommendations/whiteboard-animation.html" }
+    ],
+    sourceLinks: [
+      { title: "VideoScribe pricing", url: "https://www.videoscribe.co/pricing/", description: "Current trial, annual plan prices, included tools, and licensing guidance." },
+      { title: "Subscription limits", url: "https://help.videoscribe.co/knowledge/subscription-plan-limitations", description: "Downloads, duration, assets, watermarks, AI allowances, fonts, and reseller rights." },
+      { title: "Seven-day trial", url: "https://help.videoscribe.co/knowledge/videoscribe-free-7-day-trial", description: "Trial duration, downloads, watermark, AI limits, payment details, and retention." },
+      { title: "Publishing guide", url: "https://help.videoscribe.co/knowledge/publish-and-share-projects", description: "Preview links, MP4 and GIF exports, video length, and download limits." },
+      { title: "Commercial and reseller rights", url: "https://help.videoscribe.co/knowledge/make-money-from-scribe-videos", description: "Official distinction between promotion, client work, and reselling videos." }
+    ],
+    faqs: [
+      {
+        question: "What is VideoScribe?",
+        answer: "VideoScribe is a whiteboard-animation platform from Sparkol for creating hand-drawn explainer, education, training, marketing, and presentation videos."
+      },
+      {
+        question: "How much does VideoScribe cost?",
+        answer: "The official annual view checked on July 11, 2026 listed Lite at $12.50, Core at $18.75, and Max at $23.33 per licence per month, billed annually. Monthly rates and promotions may differ."
+      },
+      {
+        question: "Does VideoScribe have a free trial?",
+        answer: "Yes. VideoScribe documents a seven-day trial with no payment details, three watermarked downloads, projects up to five minutes, and limited AI image and script generation."
+      },
+      {
+        question: "Is VideoScribe good for YouTube?",
+        answer: "It can work well for educational and explainer channels. Paid plans include commercial rights, but client resale requires Max, and creators should confirm current terms before publishing."
+      },
+      {
+        question: "Can VideoScribe export MP4 files?",
+        answer: "Yes. Official documentation lists 1080p MP4 export on every plan, with download counts and maximum video length controlled by the selected tier."
+      },
+      {
+        question: "Does VideoScribe include AI tools?",
+        answer: "Yes. Current plans include different allowances for AI images and scripts, while Core and Max also include AI voiceover minutes."
+      },
+      {
+        question: "What are the main VideoScribe drawbacks?",
+        answer: "The main concerns are plan-based download and duration limits, Max-only reseller rights and custom fonts, and recurring public feedback about slow rendering or instability in longer sessions."
+      },
+      {
+        question: "Is VideoScribe better than Doodly?",
+        answer: "VideoScribe currently offers clearer trial and plan-limit documentation plus browser preview links. Doodly may suit buyers who prefer its established desktop-supported asset workflow. The better choice depends on production style and licensing needs."
+      }
+    ],
+    finalVerdict: "VideoScribe earns an AI Creator Hub Score of 8.4 / 10. It is a focused, well-documented whiteboard-animation product with a useful no-card trial, flexible canvas sizes, strong visual libraries on higher plans, and clear commercial-rights guidance. The main cautions are plan limits and recurring community reports about rendering speed or stability. For educators, instructional designers, and creators who want a deliberate whiteboard production workflow, it deserves a place near the top of the shortlist.",
+    sources: [
+      { name: "Official VideoScribe pricing", url: "https://www.videoscribe.co/pricing/", status: "Reviewed July 11, 2026" },
+      { name: "Official VideoScribe help center", url: "https://help.videoscribe.co/knowledge/subscription-plan-limitations", status: "Reviewed July 11, 2026" },
+      { name: "G2 VideoScribe review themes", url: "https://www.g2.com/products/videoscribe/reviews", status: "Summarized; no review text reproduced" }
+    ]
+  },
+  {
+    slug: "animaker",
+    name: "Animaker",
+    category: "Video",
+    officialWebsite: "https://www.animaker.com/",
+    scores: {
+      aiCreatorHubScore: { score: 8.3, label: "Very Good", status: "Official", badges: ["Strong character-animation toolkit"] },
+      communityScore: { score: 9.4, sentiment: "Very Positive", status: "Estimated from public review platforms" },
+      confidence: "Moderate"
+    },
+    badge: "Strong character-animation toolkit",
+    summary: "Animaker is a broad browser-based animation platform combining AI video generation, whiteboard animation, custom characters, templates, voice, subtitles, stock assets, and team-oriented production features.",
+    verdict: "Animaker is the better fit when whiteboard animation is only one part of a larger character, training, marketing, or multilingual video workflow. Its breadth is valuable, but plan limits and credit systems deserve careful review before committing.",
+    idealFor: ["L&D teams", "marketers", "educators", "character-animation creators"],
+    currentVersion: "Current Animaker web platform",
+    developer: "Animaker Inc.",
+    pricing: "A free plan and 7-day trial are advertised. The official annual plan cards list Basic at $15/month, Starter at $25/month, and Pro at $43/month when billed yearly; Enterprise uses custom pricing.",
+    platforms: ["Web", "iPhone and iPad app for supported creation workflows"],
+    freeTrial: "Free plan available; the official pricing page also advertises a 7-day trial of higher-tier features.",
+    api: "Animaker advertises an application-based Ultra Gen REST API; access is not presented as an instant self-serve entitlement.",
+    featured: false,
+    published: "2026-07-11",
+    updated: "2026-07-11",
+    lastVerified: "2026-07-11",
+    url: "reviews/animaker.html",
+    methodology: "AI Creator Hub reviewed Animaker's official product, feature, whiteboard, pricing, help, and Ultra Gen API pages. Community sentiment was summarized from established public review-platform patterns without reproducing individual reviews. This source-checked evaluation does not claim personal long-term use.",
+    scoreMethodology: "The 8.3 score is a normalized weighted assessment of documented features, ease of use, value, performance signals, support, documentation, learning curve, and recommendation fit. Strong breadth is balanced against plan complexity, usage credits, download limits, and community reports of rendering friction.",
+    communityConsensus: {
+      positive: "Public sentiment strongly favors Animaker's ease of use, templates, character tools, animation breadth, and ability to help non-specialists create polished-looking videos quickly.",
+      negative: "Common complaints center on free-plan restrictions, pricing, plan and credit limits, and slower rendering or editing friction as projects become more demanding.",
+      overall: "The broad consensus is very positive for approachable business and education animation, but buyers should match the plan carefully to export volume and advanced feature needs.",
+      sources: ["G2 Animaker review summary and recurring themes", "Official Animaker plan and product documentation"]
+    },
+    seo: {
+      title: "Animaker Review (2026): Pricing, Pros & Cons | AI Creator Hub",
+      metaDescription: "Animaker review covering current pricing, whiteboard and character features, AI tools, exports, pros, cons, alternatives, community sentiment, and score.",
+      canonicalPath: "reviews/animaker.html",
+      keywords: ["Animaker review", "Animaker pricing", "Animaker alternatives", "Animaker pros and cons", "Animaker whiteboard review", "animation video maker", "Animaker free trial"],
+      openGraph: {
+        title: "Animaker Review (2026): Pricing, Pros & Cons | AI Creator Hub",
+        description: "A source-checked look at Animaker pricing, whiteboard and character tools, AI features, strengths, limits, and alternatives.",
+        type: "article",
+        image: "../assets/img/hero-dashboard.png"
+      },
+      twitterCard: {
+        card: "summary_large_image",
+        title: "Animaker Review (2026): Pricing, Pros & Cons",
+        description: "Current plans, animation features, AI tools, pros, cons, alternatives, and editorial score.",
+        image: "../assets/img/hero-dashboard.png"
+      }
+    },
+    pros: [
+      "Broad toolkit spanning whiteboard, character, generative, live-action, and presentation video",
+      "Official whiteboard page lists custom characters, 10,000+ assets, and 100+ templates",
+      "Strong multilingual voice and subtitle options",
+      "Free plan plus a seven-day higher-tier trial",
+      "Enterprise path includes collaboration, brand controls, security, and SCORM export"
+    ],
+    cons: [
+      "Plan, credit, asset, and download limits take time to compare",
+      "The broad interface can feel heavier than a dedicated whiteboard tool",
+      "Commercial rights, custom fonts, and version history require Pro or Enterprise",
+      "Public reviewers frequently mention restrictive free access and occasional slow rendering",
+      "Ultra Gen API access requires an application rather than simple self-service activation"
+    ],
+    whatIsIt: "Animaker is a browser-based video and animation platform from Animaker Inc. Its scope extends beyond whiteboard animation into custom characters, AI-generated video and assets, live-video editing, voiceovers, subtitles, presentations, infographics, and team production. For whiteboard work specifically, the company documents prompt-based generation, a dedicated character builder, large asset and template libraries, multilingual voice, and project-link collaboration.",
+    keyFeatures: [
+      {
+        title: "AI whiteboard generation",
+        description: "Animaker says prompts and specifications can generate a whiteboard-video starting point that remains editable in the platform."
+      },
+      {
+        title: "Whiteboard character builder",
+        description: "The official whiteboard page describes customizable characters with more than 200 actions and 20 expressions."
+      },
+      {
+        title: "Templates and visual assets",
+        description: "Animaker advertises 100+ whiteboard templates, 10,000+ whiteboard assets, and a much broader stock library across the full platform."
+      },
+      {
+        title: "Voice and subtitles",
+        description: "The whiteboard page promotes 2,000+ AI voices across 150+ languages and subtitles across 130+ languages. Plan allowances still apply."
+      },
+      {
+        title: "Team and enterprise controls",
+        description: "Enterprise features include live collaboration, team licences, brand kits, shared libraries, 2FA, SSO, and SCORM export."
+      },
+      {
+        title: "Application-based API",
+        description: "The Ultra Gen REST API is positioned for programmatic animation and video generation, but access requires an application."
+      }
+    ],
+    pricingTable: [
+      {
+        plan: "Free",
+        price: "$0",
+        bestFor: "Exploration and small tests",
+        notes: "Includes limited downloads and AI assets. Free outputs and advanced features are restricted; confirm current watermark and usage terms."
+      },
+      {
+        plan: "Basic Annual",
+        price: "$15/month ($180 billed yearly)",
+        bestFor: "Light individual use",
+        notes: "The official comparison currently lists five premium downloads monthly and plan-based quality, asset, and AI limits."
+      },
+      {
+        plan: "Starter Annual",
+        price: "$25/month ($300 billed yearly)",
+        bestFor: "Regular creators",
+        notes: "Includes ten premium downloads monthly, FHD output, fifteen-minute videos, whiteboard animation, and larger AI allowances."
+      },
+      {
+        plan: "Pro Annual",
+        price: "$43/month ($516 billed yearly)",
+        bestFor: "Professional production",
+        notes: "Includes thirty premium downloads monthly, 2K output, thirty-minute videos, commercial rights, version history, multiple formats, and custom fonts."
+      },
+      {
+        plan: "Enterprise",
+        price: "Custom",
+        bestFor: "Teams and governed workflows",
+        notes: "Adds 4K, team features, brand controls, live collaboration, shared libraries, advanced security, and commercial and reselling rights."
+      }
+    ],
+    whoShouldBuy: [
+      "L&D and HR teams creating character-led training or internal communication.",
+      "Marketers who need animation, voice, subtitles, templates, and brand assets in one browser workspace.",
+      "Educators who want more character and scene variety than a dedicated doodle tool.",
+      "Teams that can justify Pro or Enterprise for commercial rights, collaboration, or governance."
+    ],
+    whoShouldSkip: [
+      "Creators who only need a simple, focused whiteboard editor with minimal plan complexity.",
+      "High-volume producers who have not confirmed download and AI-credit requirements.",
+      "Developers who need guaranteed immediate API access.",
+      "Buyers who need advanced timeline compositing comparable to professional motion-graphics software."
+    ],
+    useCases: [
+      "Create character-led onboarding and workplace training videos.",
+      "Generate a whiteboard explainer and customize its characters, voice, and subtitles.",
+      "Produce multilingual marketing videos from a shared visual system.",
+      "Build educational videos, presentations, infographics, and short social clips.",
+      "Export SCORM packages on Enterprise for supported learning-management workflows."
+    ],
+    alternatives: [
+      {
+        name: "VideoScribe",
+        category: "Video",
+        url: "reviews/videoscribe.html",
+        summary: "A more focused whiteboard-production workflow with clearer scene, duration, and download limits."
+      },
+      {
+        name: "Doodly",
+        category: "Video",
+        url: "reviews/doodly.html",
+        summary: "A dedicated doodle-video option for buyers who prefer an established desktop-supported workflow."
+      },
+      {
+        name: "InstaDoodle",
+        category: "Video",
+        url: "reviews/instadoodle.html",
+        summary: "A narrower AI-first tool for generating doodle-style explainers quickly."
+      },
+      {
+        name: "HeyGen",
+        category: "Video",
+        url: "reviews/heygen.html",
+        summary: "A stronger fit when realistic avatar presenters and localization are the central workflow."
+      },
+      {
+        name: "Canva AI",
+        category: "Images",
+        url: "reviews/canva-ai.html",
+        summary: "A broader design and marketing workspace with simpler template-driven production."
+      }
+    ],
+    relatedLinks: [
+      {
+        title: "Doodly alternatives",
+        url: "alternatives/doodly-alternatives.html",
+        description: "Compare dedicated whiteboard tools with broader animation platforms."
+      },
+      {
+        title: "InstaDoodle alternatives",
+        url: "alternatives/instadoodle-alternatives.html",
+        description: "Choose alternatives around production depth, design breadth, or character animation."
+      },
+      {
+        title: "Whiteboard animation software for teachers",
+        url: "guides/whiteboard-animation-software-for-teachers.html",
+        description: "Compare lesson workflow, trial access, revisions, and classroom constraints."
+      },
+      {
+        title: "Whiteboard animation software for YouTube",
+        url: "guides/whiteboard-animation-software-for-youtube.html",
+        description: "Compare licensing, aspect ratios, voice, output, and publishing."
+      }
+    ],
+    comparisonSuggestions: [
+      { title: "Compare Animaker vs VideoScribe", url: "reviews/videoscribe.html" },
+      { title: "Compare Animaker vs Doodly", url: "comparisons/doodly-vs-videoscribe.html" },
+      { title: "Compare Animaker vs InstaDoodle", url: "reviews/instadoodle.html" },
+      { title: "Explore the whiteboard animation recommendation", url: "recommendations/whiteboard-animation.html" }
+    ],
+    sourceLinks: [
+      { title: "Animaker pricing", url: "https://app.animaker.com/pricing?language=en", description: "Current free, annual, and enterprise plan cards plus detailed feature limits." },
+      { title: "Animaker Whiteboard", url: "https://www.animaker.com/whiteboard", description: "Whiteboard generation, character, asset, template, voice, subtitle, and collaboration claims." },
+      { title: "Animaker features", url: "https://www.animaker.com/features", description: "Current animation, AI, editing, stock, voice, subtitle, and security features." },
+      { title: "Animaker Ultra Gen API", url: "https://app.animaker.com/ultragen-api", description: "Application-based REST API positioning and supported generation workflows." },
+      { title: "Animaker help center", url: "https://support.animaker.com/en/", description: "Official support documentation for exports, plans, projects, and account behavior." }
+    ],
+    faqs: [
+      {
+        question: "What is Animaker?",
+        answer: "Animaker is a browser-based video and animation platform with character animation, whiteboard tools, AI generation, voice, subtitles, templates, stock assets, and team features."
+      },
+      {
+        question: "How much does Animaker cost?",
+        answer: "The annual plan cards checked on July 11, 2026 listed Basic at $15 per month, Starter at $25, and Pro at $43 when billed yearly. A free plan is available and Enterprise uses custom pricing."
+      },
+      {
+        question: "Does Animaker have a free plan or trial?",
+        answer: "Yes. Animaker advertises a free plan and a seven-day trial that temporarily unlocks higher-tier features. Confirm current download, watermark, asset, and AI limits before starting."
+      },
+      {
+        question: "Can Animaker create whiteboard videos?",
+        answer: "Yes. Animaker's current whiteboard product page describes AI-assisted generation, editable scenes, custom whiteboard characters, 10,000+ assets, and 100+ templates."
+      },
+      {
+        question: "Is Animaker good for beginners?",
+        answer: "Its templates and drag-and-drop approach are designed for non-specialists, and public sentiment frequently praises ease of use. Its broad feature set can still take longer to learn than a focused whiteboard tool."
+      },
+      {
+        question: "Does Animaker have an API?",
+        answer: "Animaker advertises an Ultra Gen REST API for programmatic video and animation generation. Access currently requires submitting an application rather than enabling it directly from a standard plan."
+      },
+      {
+        question: "What are the main Animaker drawbacks?",
+        answer: "The primary cautions are complex plan and credit limits, restricted free access, plan-dependent commercial features, and public reports of rendering or editing friction on demanding projects."
+      },
+      {
+        question: "Is Animaker better than VideoScribe?",
+        answer: "Animaker is broader for character animation, multilingual voice, templates, and team workflows. VideoScribe is more focused on a structured whiteboard-production process. The better choice depends on whether breadth or specialization matters more."
+      }
+    ],
+    finalVerdict: "Animaker earns an AI Creator Hub Score of 8.3 / 10. It offers considerably more than whiteboard animation: character building, templates, AI generation, multilingual voice, subtitles, stock media, and enterprise controls all live in one browser platform. That breadth is its advantage and its main source of complexity. Animaker belongs on the shortlist for education, training, and marketing teams that need varied animated content, provided the chosen plan's download, credit, commercial-use, and collaboration limits fit the actual workload.",
+    sources: [
+      { name: "Official Animaker pricing", url: "https://app.animaker.com/pricing?language=en", status: "Reviewed July 11, 2026" },
+      { name: "Official Animaker Whiteboard page", url: "https://www.animaker.com/whiteboard", status: "Reviewed July 11, 2026" },
+      { name: "Official Animaker Ultra Gen API", url: "https://app.animaker.com/ultragen-api", status: "Reviewed July 11, 2026" },
+      { name: "G2 Animaker review themes", url: "https://www.g2.com/products/animaker/reviews", status: "Summarized; no review text reproduced" }
     ]
   }
 ];

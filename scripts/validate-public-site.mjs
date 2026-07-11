@@ -22,9 +22,11 @@ for (const file of htmlFiles) {
   const html = readFileSync(file, "utf8");
   const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim();
   const description = html.match(/<meta\s+name="description"\s+content="([^"]*)"/i)?.[1]?.trim();
+  const h1Count = (html.match(/<h1\b/gi) || []).length;
 
   if (!title) failures.push(`${relative}: missing title`);
   if (!description) failures.push(`${relative}: missing meta description`);
+  if (h1Count !== 1) failures.push(`${relative}: expected exactly one h1, found ${h1Count}`);
   if (title) {
     if (titles.has(title)) failures.push(`${relative}: duplicate title with ${titles.get(title)}`);
     titles.set(title, relative);
@@ -53,6 +55,9 @@ for (const file of htmlFiles) {
           if (!item?.url?.startsWith("https://")) failures.push(`${relative}: breadcrumb ${crumb.position} url is not absolute HTTPS`);
         }
       }
+      if (["Review", "Article"].includes(schema["@type"])) {
+        if (!schema.author?.url?.startsWith("https://")) failures.push(`${relative}: ${schema["@type"]} author URL is not absolute HTTPS`);
+      }
     } catch (error) {
       failures.push(`${relative}: JSON-LD ${index + 1} does not parse: ${error.message}`);
     }
@@ -62,9 +67,19 @@ for (const file of htmlFiles) {
     const main = html.match(/<main[^>]*data-static-review="true"[^>]*>([\s\S]*?)<\/main>/i)?.[1] || "";
     if (main.length < 5000) failures.push(`${relative}: review body is not statically rendered`);
     if (schemas.length < 3) failures.push(`${relative}: expected Review, FAQ, and Breadcrumb schema`);
+    if (!html.includes("../authors/editorial-team.html")) failures.push(`${relative}: missing editorial-team byline link`);
+    if (!html.includes("../editorial-methodology.html")) failures.push(`${relative}: missing methodology link`);
   }
 
-  if (/^(alternatives|guides)\//.test(relative) || relative === "comparisons/instadoodle-vs-videoscribe.html") {
+  if (/^(comparisons|alternatives|guides|recommendations)\//.test(relative)) {
+    if (!html.includes("../authors/editorial-team.html")) failures.push(`${relative}: missing editorial-team byline link`);
+    if (!html.includes("../editorial-methodology.html")) failures.push(`${relative}: missing methodology link`);
+  }
+
+  if (/^(alternatives|guides)\//.test(relative) || [
+    "comparisons/instadoodle-vs-videoscribe.html",
+    "comparisons/doodly-vs-videoscribe.html"
+  ].includes(relative)) {
     const text = html
       .replace(/<script[\s\S]*?<\/script>/gi, " ")
       .replace(/<[^>]+>/g, " ")
@@ -85,15 +100,29 @@ for (const url of sitemapUrls) {
   if (!existsSync(path.join(root, localPath))) failures.push(`sitemap.xml points to a missing file: ${url}`);
 }
 
+for (const file of htmlFiles) {
+  const relative = path.relative(root, file).replace(/\\/g, "/");
+  const expectedUrl = relative === "index.html" ? SITE : `${SITE}${relative}`;
+  if (!sitemapUrls.includes(expectedUrl)) failures.push(`sitemap.xml is missing public page: ${relative}`);
+}
+
 for (const relative of [
   "alternatives/instadoodle-alternatives.html",
   "alternatives/doodly-alternatives.html",
   "comparisons/instadoodle-vs-videoscribe.html",
+  "comparisons/doodly-vs-videoscribe.html",
+  "reviews/videoscribe.html",
+  "reviews/animaker.html",
+  "editorial-methodology.html",
+  "authors/editorial-team.html",
   "guides/whiteboard-animation-software-for-teachers.html",
   "guides/whiteboard-animation-software-for-youtube.html"
 ]) {
   if (!sitemap.includes(`<loc>${SITE}${relative}</loc>`)) failures.push(`sitemap.xml is missing ${relative}`);
 }
+
+const instaVideoScribe = readFileSync(path.join(root, "comparisons/instadoodle-vs-videoscribe.html"), "utf8");
+if (instaVideoScribe.includes("Not yet scored")) failures.push("InstaDoodle vs VideoScribe still describes VideoScribe as unscored");
 
 const publicHtml = htmlFiles.map((file) => readFileSync(file, "utf8")).join("\n");
 for (const forbidden of [

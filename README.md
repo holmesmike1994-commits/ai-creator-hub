@@ -8,6 +8,8 @@ Modern static website for AI reviews, comparisons, tutorials, and affiliate-read
 - `reviews.html` - review directory
 - `categories.html` - category landing page
 - `about.html` - company/editorial page
+- `editorial-methodology.html` - public evidence, scoring, confidence, and independence standards
+- `authors/editorial-team.html` - public editorial organization profile used by review bylines and schema
 - `contact.html` - frontend-only contact form
 - `privacy-policy.html` - privacy policy placeholder
 - `affiliate-disclosure.html` - affiliate disclosure placeholder
@@ -33,6 +35,8 @@ Private editorial tools should stay outside this public website folder and out o
 ## Static Review Build
 
 Review content is stored once in `assets/js/reviews-data.js` and rendered by the shared review engine. The static build writes complete semantic HTML and JSON-LD into every `reviews/*.html` file while preserving the client-side renderer as a progressive enhancement. It also pre-renders the public reviews directory so crawlers receive normal review links without executing JavaScript.
+
+Every detailed review identifies the AI Creator Hub Editorial Team, the latest source-check date, confidence, and preparation method. The AI Creator Hub Score is an editorial score; community sentiment remains a separate signal. Research-based pages must not imply personal product use.
 
 ```powershell
 node scripts/build-static-reviews.mjs

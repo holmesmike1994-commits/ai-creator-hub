@@ -28,7 +28,7 @@
     youtube: '<svg viewBox="0 0 24 24"><path d="M4.5 8.5S5 6.8 6.4 6.4C7.7 6 12 6 12 6s4.3 0 5.6.4c1.4.4 1.9 2.1 1.9 2.1s.5 1.9.5 3.5-.5 3.5-.5 3.5-.5 1.7-1.9 2.1C16.3 18 12 18 12 18s-4.3 0-5.6-.4c-1.4-.4-1.9-2.1-1.9-2.1S4 13.6 4 12s.5-3.5.5-3.5ZM10.5 9.8v4.4L14.5 12l-4-2.2Z"/></svg>'
   };
 
-  const fromNestedPage = window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/comparisons/") || window.location.pathname.includes("/recommendations/") || window.location.pathname.includes("/guides/") || window.location.pathname.includes("/alternatives/");
+  const fromNestedPage = window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/comparisons/") || window.location.pathname.includes("/recommendations/") || window.location.pathname.includes("/guides/") || window.location.pathname.includes("/alternatives/") || window.location.pathname.includes("/authors/");
 
   const editorialContent = [
     {
@@ -44,6 +44,13 @@
       meta: "Whiteboard Animation",
       description: "Compare AI-first speed, trial access, pricing, assets, and production control.",
       href: "comparisons/instadoodle-vs-videoscribe.html"
+    },
+    {
+      type: "Comparison",
+      title: "Doodly vs VideoScribe",
+      meta: "Whiteboard Animation",
+      description: "Compare pricing, trials, production controls, assets, exports, rights, and buyer fit.",
+      href: "comparisons/doodly-vs-videoscribe.html"
     },
     {
       type: "Alternatives",
@@ -264,7 +271,7 @@
       window.AICHReviewEngine.renderInto(detail, review, {
         allReviews: reviews,
         categories,
-        fromNested: fromNestedReviewPage
+        fromNested: fromNestedPage
       });
       return;
     }
@@ -438,6 +445,8 @@
               <div>
                 <h2>Trust</h2>
                 <ul class="footer-list">
+                  <li><a href="${localHref("editorial-methodology.html")}">Editorial Methodology</a></li>
+                  <li><a href="${localHref("authors/editorial-team.html")}">Editorial Team</a></li>
                   <li><a href="${localHref("privacy-policy.html")}">Privacy Policy</a></li>
                   <li><a href="${localHref("affiliate-disclosure.html")}">Affiliate Disclosure</a></li>
                 </ul>

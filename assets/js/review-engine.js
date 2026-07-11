@@ -2,6 +2,11 @@
   const BRAND = "AI Creator Hub";
   const TAGLINE = "Discover. Compare. Choose Better AI.";
   const SITE_BASE_URL = "https://holmesmike1994-commits.github.io/ai-creator-hub/";
+  const DEFAULT_AUTHOR = {
+    name: "AI Creator Hub Editorial Team",
+    url: "authors/editorial-team.html",
+    type: "Organization"
+  };
   const SOURCE_CHECKLIST = [
     "Official product website",
     "Official documentation",
@@ -244,9 +249,14 @@
       affiliateDisclosure:
         source.affiliateDisclosure ||
         `${BRAND} may earn a commission if readers purchase through affiliate links. Affiliate relationships do not determine scores, rankings, or recommendations.`,
+      author: {
+        ...DEFAULT_AUTHOR,
+        ...(typeof source.author === "object" ? source.author : {})
+      },
       lastVerified: source.lastVerified || source.updated || source.published || nowDate(),
       methodology: source.methodology || "",
       scoreMethodology: source.scoreMethodology || "",
+      communityConsensus: source.communityConsensus || null,
       evidence: ensureArray(source.evidence, []),
       sourceLinks: ensureArray(source.sourceLinks, []),
       relatedLinks: ensureArray(source.relatedLinks, []),
@@ -346,6 +356,23 @@
     </div>
   `;
 
+  const consensusPanel = (consensus) => `
+    <div class="consensus-grid">
+      <article class="engine-mini-card">
+        <p class="eyebrow">Common Praise</p>
+        <h3>What users value</h3>
+        <p>${escapeHtml(consensus.positive || "Positive themes are still being gathered.")}</p>
+      </article>
+      <article class="engine-mini-card">
+        <p class="eyebrow">Common Complaints</p>
+        <h3>Where friction appears</h3>
+        <p>${escapeHtml(consensus.negative || "Negative themes are still being gathered.")}</p>
+      </article>
+    </div>
+    <p class="editorial-note"><strong>Overall sentiment:</strong> ${escapeHtml(consensus.overall || "Community evidence is currently limited.")}</p>
+    ${ensureArray(consensus.sources, []).length ? `<p class="fine-print"><strong>Sources considered:</strong> ${escapeHtml(ensureArray(consensus.sources, []).join("; "))}. AI Creator Hub summarizes recurring themes in original language and does not reproduce individual reviews.</p>` : ""}
+  `;
+
   const evidenceGallery = (items) => `
     <div class="evidence-grid">
       ${items.map((item) => `
@@ -401,7 +428,11 @@
           operatingSystem: review.platforms.join(", "),
           url: publicUrl(review.officialWebsite)
         },
-        author: { "@type": "Organization", name: BRAND },
+        author: {
+          "@type": review.author.type || "Organization",
+          name: review.author.name,
+          url: absoluteUrl(review.author.url, baseUrl)
+        },
         datePublished: review.published,
         dateModified: review.updated,
         reviewBody: review.quickVerdict
@@ -506,6 +537,12 @@
             <p class="eyebrow">${escapeHtml(review.category)} Review</p>
             <h1>${escapeHtml(review.name)} Review</h1>
             <p class="lede">${escapeHtml(review.shortDescription)}</p>
+            <div class="review-byline" aria-label="Review authorship">
+              <span>Prepared by</span>
+              <a href="${prefix}${escapeHtml(review.author.url)}">${escapeHtml(review.author.name)}</a>
+              <span>Source checked ${escapeHtml(review.lastVerified)}</span>
+              <a href="${prefix}editorial-methodology.html">How we evaluate tools</a>
+            </div>
             <div class="engine-hero-actions">
               ${officialCtaHref ? `<a class="button" href="${escapeHtml(officialCtaHref)}" target="_blank" rel="${officialRel}">Official Website</a>` : ""}
               ${affiliateHref ? `<a class="button button--ghost" href="${escapeHtml(affiliateHref)}" target="_blank" rel="sponsored nofollow noopener noreferrer">${escapeHtml(review.affiliateCtaLabel)}</a>` : ""}
@@ -579,8 +616,9 @@
       ${section("Who Should Buy It?", list(review.whoShouldBuy))}
       ${section("Who Should Skip It?", list(review.whoShouldSkip, "minus-list engine-check-list"))}
       ${section("Real World Use Cases", list(review.useCases))}
+      ${review.communityConsensus ? section("Community Consensus", consensusPanel(review.communityConsensus), "Recurring Public Themes") : ""}
       ${section("Alternatives", alternativeCards(review.alternatives, prefix))}
-      ${review.relatedLinks.length ? section("Related Whiteboard Guides", linkedList(review.relatedLinks, prefix)) : ""}
+      ${review.relatedLinks.length ? section("Related Guides & Comparisons", linkedList(review.relatedLinks, prefix)) : ""}
       ${section("Comparison Suggestions", linkedList(review.comparisonSuggestions, prefix))}
       ${review.sourceLinks.length ? section("Official Sources", sourceCards(review.sourceLinks), "Source Check") : ""}
       ${section("Frequently Asked Questions", faqItems(review.faqs))}
