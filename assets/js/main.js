@@ -28,7 +28,52 @@
     youtube: '<svg viewBox="0 0 24 24"><path d="M4.5 8.5S5 6.8 6.4 6.4C7.7 6 12 6 12 6s4.3 0 5.6.4c1.4.4 1.9 2.1 1.9 2.1s.5 1.9.5 3.5-.5 3.5-.5 3.5-.5 1.7-1.9 2.1C16.3 18 12 18 12 18s-4.3 0-5.6-.4c-1.4-.4-1.9-2.1-1.9-2.1S4 13.6 4 12s.5-3.5.5-3.5ZM10.5 9.8v4.4L14.5 12l-4-2.2Z"/></svg>'
   };
 
-  const fromNestedPage = window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/comparisons/") || window.location.pathname.includes("/recommendations/");
+  const fromNestedPage = window.location.pathname.includes("/reviews/") || window.location.pathname.includes("/comparisons/") || window.location.pathname.includes("/recommendations/") || window.location.pathname.includes("/guides/") || window.location.pathname.includes("/alternatives/");
+
+  const editorialContent = [
+    {
+      type: "Comparison",
+      title: "InstaDoodle vs Doodly",
+      meta: "Whiteboard Animation",
+      description: "Compare two scored whiteboard-animation evaluations.",
+      href: "comparisons/instadoodle-vs-doodly.html"
+    },
+    {
+      type: "Comparison",
+      title: "InstaDoodle vs VideoScribe",
+      meta: "Whiteboard Animation",
+      description: "Compare AI-first speed, trial access, pricing, assets, and production control.",
+      href: "comparisons/instadoodle-vs-videoscribe.html"
+    },
+    {
+      type: "Alternatives",
+      title: "InstaDoodle Alternatives",
+      meta: "Whiteboard Animation",
+      description: "Five alternatives organized by the workflow problem they solve.",
+      href: "alternatives/instadoodle-alternatives.html"
+    },
+    {
+      type: "Alternatives",
+      title: "Doodly Alternatives",
+      meta: "Whiteboard Animation",
+      description: "Compare AI-assisted, cloud, design-suite, and business-video replacements.",
+      href: "alternatives/doodly-alternatives.html"
+    },
+    {
+      type: "Guide",
+      title: "Whiteboard Animation Software for Teachers",
+      meta: "Education",
+      description: "Choose by lesson workflow, trial access, revision speed, and classroom constraints.",
+      href: "guides/whiteboard-animation-software-for-teachers.html"
+    },
+    {
+      type: "Guide",
+      title: "Whiteboard Animation Software for YouTube",
+      meta: "YouTube",
+      description: "Choose by publishing speed, licensing, voice, output, and channel workflow.",
+      href: "guides/whiteboard-animation-software-for-youtube.html"
+    }
+  ];
 
   const localHref = (href) => {
     if (/^(https?:|mailto:|tel:|#)/i.test(href)) return href;
@@ -142,6 +187,11 @@
         description: category.description,
         href: localHref(`categories.html#${category.slug}`),
         tokens: `${category.name} ${category.description}`.toLowerCase()
+      })),
+      ...editorialContent.map((item) => ({
+        ...item,
+        href: localHref(item.href),
+        tokens: `${item.title} ${item.meta} ${item.description}`.toLowerCase()
       }))
     ];
 
@@ -190,6 +240,8 @@
   const renderReviewDetail = () => {
     const detail = document.querySelector("[data-review-detail]");
     if (!detail) return;
+
+    if (detail.dataset.staticReview === "true") return;
 
     const slug = detail.dataset.reviewSlug || document.body.dataset.reviewSlug;
     const review = reviews.find((item) => item.slug === slug);

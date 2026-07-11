@@ -27,14 +27,17 @@ Private editorial tools should stay outside this public website folder and out o
 2. Verify facts against official sources:
    official website, docs, pricing page, release notes, public feature lists, and well-established public sentiment.
 3. Add the published review object to `assets/js/reviews-data.js`.
-4. Create the HTML file in `reviews/`.
-5. Open the page locally and check schema, links, and readability.
+4. Run `node scripts/build-static-reviews.mjs`.
+5. Open the generated page locally and check schema, links, and readability.
 
-If creating manually, copy one of the existing files in `reviews/` and update:
-   - `<title>`
-   - meta description
-   - `data-review-slug`
-   - `data-active="reviews"`
-Then point the new data object's `url` to the new page.
+## Static Review Build
 
-No build step is required. Open `index.html` directly, or serve the folder with any static host.
+Review content is stored once in `assets/js/reviews-data.js` and rendered by the shared review engine. The static build writes complete semantic HTML and JSON-LD into every `reviews/*.html` file while preserving the client-side renderer as a progressive enhancement. It also pre-renders the public reviews directory so crawlers receive normal review links without executing JavaScript.
+
+```powershell
+node scripts/build-static-reviews.mjs
+node scripts/build-whiteboard-cluster.mjs
+node scripts/validate-public-site.mjs
+```
+
+The finished files still work by opening `index.html` directly or by serving the folder with any static host.

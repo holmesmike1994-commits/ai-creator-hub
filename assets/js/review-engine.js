@@ -244,6 +244,12 @@
       affiliateDisclosure:
         source.affiliateDisclosure ||
         `${BRAND} may earn a commission if readers purchase through affiliate links. Affiliate relationships do not determine scores, rankings, or recommendations.`,
+      lastVerified: source.lastVerified || source.updated || source.published || nowDate(),
+      methodology: source.methodology || "",
+      scoreMethodology: source.scoreMethodology || "",
+      evidence: ensureArray(source.evidence, []),
+      sourceLinks: ensureArray(source.sourceLinks, []),
+      relatedLinks: ensureArray(source.relatedLinks, []),
       sources: ensureArray(source.sources, SOURCE_CHECKLIST.map((name) => ({ name, status: "Required before publication" }))),
       published: source.published || nowDate(),
       updated: source.updated || source.published || nowDate()
@@ -313,6 +319,46 @@
     </div>
   `;
 
+  const linkedList = (items, basePrefix) => `
+    <ul class="check-list engine-link-list">
+      ${items.map((item) => {
+        if (typeof item === "string") return `<li>${escapeHtml(item)}</li>`;
+        const rawHref = String(item.url || item.href || "").trim();
+        const href = /^https?:/i.test(rawHref) ? rawHref : `${basePrefix}${rawHref}`;
+        const external = /^https?:/i.test(rawHref);
+        return `<li><a href="${escapeHtml(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ""}>${escapeHtml(item.title || item.name || rawHref)}</a>${item.description ? `<span>${escapeHtml(item.description)}</span>` : ""}</li>`;
+      }).join("")}
+    </ul>
+  `;
+
+  const sourceCards = (items) => `
+    <div class="source-link-grid">
+      ${items.map((item) => {
+        const href = publicUrl(item.url || item.href);
+        if (!href) return "";
+        return `
+          <a class="source-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">
+            <strong>${escapeHtml(item.title || item.name || "Official source")}</strong>
+            <span>${escapeHtml(item.description || "Open the official source in a new tab.")}</span>
+          </a>
+        `;
+      }).join("")}
+    </div>
+  `;
+
+  const evidenceGallery = (items) => `
+    <div class="evidence-grid">
+      ${items.map((item) => `
+        <figure class="evidence-card">
+          <a href="${escapeHtml(item.sourceUrl || item.image)}"${item.sourceUrl ? ' target="_blank" rel="noopener noreferrer"' : ""}>
+            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt || item.title || "Product evidence")}" loading="lazy" width="1000" height="810">
+          </a>
+          <figcaption><strong>${escapeHtml(item.title || "Product evidence")}</strong>${item.caption ? `<span>${escapeHtml(item.caption)}</span>` : ""}</figcaption>
+        </figure>
+      `).join("")}
+    </div>
+  `;
+
   const section = (title, body, eyebrow = "") => `
     <section class="engine-section">
       <div class="container narrow content-panel reveal">
@@ -367,6 +413,9 @@
           bestRating: 10,
           worstRating: 0
         };
+    }
+    if (review.evidence.length) {
+      reviewSchema.image = review.evidence.map((item) => absoluteUrl(item.image, canonical));
     }
     return [
       reviewSchema,
@@ -477,6 +526,21 @@
         </div>
       </section>
       ${section("Quick Verdict", `<p>${escapeHtml(review.quickVerdict)}</p>`)}
+      ${review.methodology || review.scoreMethodology || review.sourceLinks.length ? `
+        <section class="engine-section">
+          <div class="container narrow content-panel reveal review-methodology">
+            <p class="eyebrow">How This Review Was Prepared</p>
+            <h2>Evidence before recommendation.</h2>
+            <div class="engine-fact-grid">
+              <div><span>Last source check</span><strong>${escapeHtml(review.lastVerified)}</strong></div>
+              <div><span>Confidence</span><strong>${escapeHtml(scores.confidence)}</strong></div>
+              <div><span>Score status</span><strong>${escapeHtml(scores.aiCreatorHubScore.status || "Editorial")}</strong></div>
+            </div>
+            ${review.methodology ? `<p>${escapeHtml(review.methodology)}</p>` : ""}
+            ${review.scoreMethodology ? `<p class="editorial-note"><strong>Scoring:</strong> ${escapeHtml(review.scoreMethodology)}</p>` : ""}
+          </div>
+        </section>
+      ` : ""}
       <section class="engine-section">
         <div class="container content-panel reveal">
           <p class="eyebrow">At a Glance</p>
@@ -510,12 +574,15 @@
       </section>
       ${section("What Is It?", `<p>${escapeHtml(review.whatIsIt)}</p>`)}
       ${section("Key Features", featureCards(review.keyFeatures))}
+      ${review.evidence.length ? section("Product Evidence", evidenceGallery(review.evidence), "Official Product Interface") : ""}
       ${section("Pricing", pricingTable(review.pricingTable))}
       ${section("Who Should Buy It?", list(review.whoShouldBuy))}
       ${section("Who Should Skip It?", list(review.whoShouldSkip, "minus-list engine-check-list"))}
       ${section("Real World Use Cases", list(review.useCases))}
       ${section("Alternatives", alternativeCards(review.alternatives, prefix))}
-      ${section("Comparison Suggestions", list(review.comparisonSuggestions))}
+      ${review.relatedLinks.length ? section("Related Whiteboard Guides", linkedList(review.relatedLinks, prefix)) : ""}
+      ${section("Comparison Suggestions", linkedList(review.comparisonSuggestions, prefix))}
+      ${review.sourceLinks.length ? section("Official Sources", sourceCards(review.sourceLinks), "Source Check") : ""}
       ${section("Frequently Asked Questions", faqItems(review.faqs))}
       ${section("Final Verdict", `<p>${escapeHtml(review.finalVerdict)}</p>`)}
       ${affiliateHref ? section("Affiliate Disclosure", `<p>${escapeHtml(review.affiliateDisclosure)}</p><p class="fine-print">Links marked as partner or affiliate links may earn ${BRAND} a commission at no additional cost to readers.</p>`) : ""}

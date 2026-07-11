@@ -162,7 +162,7 @@ window.AICHReviews = [
   {
     slug: "instadoodle",
     name: "InstaDoodle",
-    category: "Images",
+    category: "Video",
     officialWebsite: "https://instadoodle.com/",
     affiliateUrl: "https://95f81no1m0whse-f-f07hgwzrn.hop.clickbank.net",
     officialWebsiteButtonUrl: "https://95f81no1m0whse-f-f07hgwzrn.hop.clickbank.net",
@@ -173,34 +173,77 @@ window.AICHReviews = [
       communityScore: { score: 8.1, sentiment: "Positive", status: "Estimated" },
       confidence: "Moderate"
     },
-    summary: "InstaDoodle is a doodle-style visual creation tool for creators who want simple explainer assets, social visuals, and lightweight educational graphics without a heavy design workflow.",
-    verdict: "InstaDoodle is worth shortlisting if you want a fast doodle-explainer style and can verify the current offer, usage rights, and output quality against your publishing workflow.",
+    summary: "InstaDoodle is a cloud-based whiteboard animation tool that combines a drag-and-drop editor, AI-generated doodle elements, templates, voiceover tools, and cloud rendering for fast explainer videos.",
+    verdict: "InstaDoodle is worth shortlisting when speed and AI-assisted doodle generation matter more than deep timeline control. Its official sales page shows useful creator features, but it also presents multiple price formats, so buyers should confirm the final billing terms at checkout.",
     idealFor: ["Educators", "solo creators", "social media teams", "coaches"],
     currentVersion: "Current web version",
     developer: "InstaDoodle",
-    pricing: "Pricing varies by promotion and checkout offer; confirm current plan details, usage rights, and refund terms before buying.",
+    pricing: "Checked July 11, 2026: the official page displays $47/month, $67/month Pro, and $127/month Agency plan cards, while a promotional checkout section displays a $37 total. Confirm the exact billing term and included upgrades before purchase.",
     platforms: ["Web"],
-    freeTrial: "Check the current offer page for trial or guarantee details.",
+    freeTrial: "No free version or trial is advertised. The official page states a 60-day money-back guarantee.",
     api: "No public API confirmed for this review.",
     featured: false,
     published: "2026-07-03",
-    updated: "2026-07-03",
+    updated: "2026-07-11",
+    lastVerified: "July 11, 2026",
     url: "reviews/instadoodle.html",
+    methodology: "AI Creator Hub reviewed InstaDoodle's official product page, feature descriptions, pricing presentation, company information, support path, and published product-interface examples. Claims on this page are limited to what those sources support; promotional performance claims and testimonials are not treated as independent evidence.",
+    scoreMethodology: "The 8.7 score uses the site's weighted editorial model across features, ease of use, value, performance, support, documentation, learning curve, and recommendation. It reflects the documented workflow and current source evidence, not a five-star average.",
+    sourceLinks: [
+      {
+        title: "InstaDoodle official product page",
+        url: "https://instadoodle.com/",
+        description: "Feature list, plan presentation, guarantee terms, FAQs, and product examples checked July 11, 2026."
+      },
+      {
+        title: "InstaDoodle company page",
+        url: "https://instadoodle.com/about-us",
+        description: "Company background, platform positioning, product features, and published use cases."
+      },
+      {
+        title: "InstaDoodle support",
+        url: "https://help.instadoodle.com/",
+        description: "Official support destination referenced by the product website."
+      }
+    ],
+    evidence: [
+      {
+        title: "Prompt-to-doodle generation",
+        image: "../assets/img/reviews/instadoodle-prompt-generation.webp",
+        alt: "Official InstaDoodle interface example showing a text prompt generating doodle characters",
+        caption: "Official product imagery illustrating the DoodleAI prompt and variation workflow.",
+        sourceUrl: "https://instadoodle.com/"
+      },
+      {
+        title: "Scene building workflow",
+        image: "../assets/img/reviews/instadoodle-scene-editor.webp",
+        alt: "Official InstaDoodle interface example showing a teacher scene and timeline",
+        caption: "Official product imagery showing scene composition and slide-based editing.",
+        sourceUrl: "https://instadoodle.com/"
+      },
+      {
+        title: "Animation and voice controls",
+        image: "../assets/img/reviews/instadoodle-animation-controls.webp",
+        alt: "Official InstaDoodle interface example showing draw animation and voiceover controls",
+        caption: "Official product imagery showing animation, transition, and voiceover options.",
+        sourceUrl: "https://instadoodle.com/"
+      }
+    ],
     seo: {
-      title: "InstaDoodle Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
-      metaDescription: "Read our InstaDoodle review with AI Creator Hub Score, Community Score, pricing notes, pros, cons, alternatives, FAQs, and final verdict.",
+      title: "InstaDoodle Review (2026): Pricing, Pros & Cons | AI Creator Hub",
+      metaDescription: "InstaDoodle review updated July 2026 with source-checked pricing, official features, product evidence, pros, cons, alternatives, and AI Creator Hub Score.",
       canonicalPath: "reviews/instadoodle.html",
       keywords: ["InstaDoodle review","InstaDoodle pricing","InstaDoodle alternatives","InstaDoodle pros and cons","doodle-style visual tool","whiteboard animation software","InstaDoodle lifetime deal"],
       openGraph: {
-        title: "InstaDoodle Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
-        description: "Read our InstaDoodle review with AI Creator Hub Score, Community Score, pricing notes, pros, cons, alternatives, FAQs, and final verdict.",
+        title: "InstaDoodle Review (2026): Pricing, Pros & Cons | AI Creator Hub",
+        description: "Source-checked InstaDoodle pricing, official features, product evidence, pros, cons, alternatives, and AI Creator Hub Score.",
         type: "article",
         image: "../assets/img/hero-dashboard.png"
       },
       twitterCard: {
         card: "summary_large_image",
-        title: "InstaDoodle Review: Pricing, Pros, Cons & Alternatives | AI Creator Hub",
-        description: "Read our InstaDoodle review with AI Creator Hub Score, Community Score, pricing notes, pros, cons, alternatives, FAQs, and final verdict.",
+        title: "InstaDoodle Review (2026): Pricing, Pros & Cons | AI Creator Hub",
+        description: "Source-checked InstaDoodle pricing, official features, product evidence, pros, cons, alternatives, and AI Creator Hub Score.",
         image: "../assets/img/hero-dashboard.png"
       }
     },
@@ -216,43 +259,43 @@ window.AICHReviews = [
       "Pricing, rights, and plan limits can vary by offer page",
       "Not ideal when you need broad image generation, advanced editing, or a polished cinematic look"
     ],
-    whatIsIt: "InstaDoodle is evaluated as a focused visual creation tool for producing doodle-style explainer graphics and simple story assets. The main buying question is whether its style, speed, and export workflow help you create clearer content faster than building every visual manually.",
+    whatIsIt: "InstaDoodle is a browser-based whiteboard animation maker. Its official product page describes a workflow built around text prompts, AI-generated doodle elements, a drag-and-drop scene editor, templates, voiceovers, background music, multiple aspect ratios, image-to-sketch conversion, and cloud rendering. It is more specialized than a general design suite: the product is designed to turn scripts and ideas into hand-drawn-style explainer videos.",
     keyFeatures: [
       {
-        title: "Doodle-style visual workflow",
-        description: "Create simple hand-drawn-style explainer visuals that can support lessons, short posts, ads, and lightweight presentations."
+        title: "DoodleAI prompt generation",
+        description: "The official workflow generates doodle characters and objects from text prompts, reducing reliance on a fixed asset library."
       },
       {
-        title: "Fast content ideation",
-        description: "Useful when you need quick visual concepts or story beats before investing in a larger design or video workflow."
+        title: "Cloud editor and rendering",
+        description: "InstaDoodle runs in the browser, supports access across devices, and renders projects in the cloud without a desktop installation."
       },
       {
-        title: "Creator-friendly use cases",
-        description: "Best suited to educators, coaches, solo creators, and marketers who want approachable visuals without a complex design suite."
+        title: "Templates, voice, and media",
+        description: "The official page lists starter templates, 1,000+ doodle assets, uploaded or generated voiceovers, background music, and image-to-sketch conversion."
       },
       {
-        title: "Offer-based buying path",
-        description: "The current checkout page should be reviewed carefully because pricing, usage rights, bonuses, and guarantees may change."
+        title: "Flexible output formats",
+        description: "Published product materials show landscape, portrait, square, and additional aspect ratios, with 1080p on the standard offer and higher-resolution claims on upgraded plans."
       }
     ],
     pricingTable: [
       {
-        plan: "Current Offer",
-        price: "Verify on checkout page",
-        bestFor: "New buyers testing InstaDoodle",
-        notes: "Confirm current price, included assets, usage rights, and refund terms before purchase."
+        plan: "Promotional checkout",
+        price: "$37 displayed",
+        bestFor: "Buyers evaluating the current front-end offer",
+        notes: "The official page also displays monthly plan cards. Confirm whether the checkout is one-time or recurring before paying."
       },
       {
-        plan: "Upsells or Add-ons",
-        price: "Verify during checkout",
-        bestFor: "Creators who need more templates or capacity",
-        notes: "Review each offer separately instead of assuming it is required."
+        plan: "InstaDoodle",
+        price: "$47/month displayed",
+        bestFor: "1080p projects and the standard doodle library",
+        notes: "Official plan card lists unlimited videos, 1,000+ elements, 150 AI credits, and 1080p output."
       },
       {
-        plan: "Manual alternative",
-        price: "Time cost",
-        bestFor: "Creators with existing design skills",
-        notes: "Compare the tool against Canva, Doodly, and manual design workflows."
+        plan: "Pro / Agency",
+        price: "$67 / $127 per month displayed",
+        bestFor: "Higher resolution, larger libraries, or heavier AI use",
+        notes: "The official page lists 2K/4K output for Pro and unlimited AI credits plus multilingual voices for Agency. Verify checkout terms."
       }
     ],
     whoShouldBuy: [
@@ -272,6 +315,33 @@ window.AICHReviews = [
       "Turn a marketing idea into a quick doodle-style explainer concept.",
       "Storyboard a short social video or landing-page explainer before production.",
       "Make approachable graphics for coaching, consulting, or training material."
+    ],
+    relatedLinks: [
+      {
+        title: "Best InstaDoodle alternatives",
+        url: "alternatives/instadoodle-alternatives.html",
+        description: "Compare Doodly, VideoScribe, Canva, Animaker, and Vyond by workflow."
+      },
+      {
+        title: "InstaDoodle vs Doodly",
+        url: "comparisons/instadoodle-vs-doodly.html",
+        description: "Direct comparison of AI assistance, workflow, pricing, and fit."
+      },
+      {
+        title: "InstaDoodle vs VideoScribe",
+        url: "comparisons/instadoodle-vs-videoscribe.html",
+        description: "Compare a prompt-led cloud workflow with a mature structured animation platform."
+      },
+      {
+        title: "Whiteboard animation software for teachers",
+        url: "guides/whiteboard-animation-software-for-teachers.html",
+        description: "Choose by lesson workflow, trial access, output limits, and ease of revision."
+      },
+      {
+        title: "Whiteboard animation software for YouTube",
+        url: "guides/whiteboard-animation-software-for-youtube.html",
+        description: "Choose by aspect ratio, voiceover, licensing, and publishing workflow."
+      }
     ],
     alternatives: [
       {
@@ -300,15 +370,14 @@ window.AICHReviews = [
       }
     ],
     comparisonSuggestions: [
-      "Compare InstaDoodle vs Doodly",
-      "Compare InstaDoodle vs Canva AI",
-      "Compare InstaDoodle vs Midjourney",
-      "Compare InstaDoodle vs HeyGen"
+      { title: "Compare InstaDoodle vs Doodly", url: "comparisons/instadoodle-vs-doodly.html" },
+      { title: "Compare InstaDoodle vs VideoScribe", url: "comparisons/instadoodle-vs-videoscribe.html" },
+      { title: "Compare InstaDoodle alternatives", url: "alternatives/instadoodle-alternatives.html" }
     ],
     faqs: [
       {
         question: "What is InstaDoodle?",
-        answer: "InstaDoodle is a visual creation tool focused on doodle-style explainer assets for education, marketing, social posts, and simple storytelling workflows."
+        answer: "InstaDoodle is a cloud-based whiteboard animation maker with AI doodle generation, templates, scene editing, voiceover tools, music, image-to-sketch conversion, and cloud rendering."
       },
       {
         question: "Who is InstaDoodle best for?",
@@ -316,7 +385,7 @@ window.AICHReviews = [
       },
       {
         question: "How much does InstaDoodle cost?",
-        answer: "InstaDoodle pricing can vary by promotion and checkout offer, so buyers should confirm the current price, included assets, usage rights, and refund terms on the official offer page."
+        answer: "On July 11, 2026, the official page displayed $47/month, $67/month Pro, and $127/month Agency plan cards, plus a separate promotional checkout showing a $37 total. Buyers should confirm the final billing term and included upgrades before paying."
       },
       {
         question: "Does InstaDoodle replace Canva or Midjourney?",
@@ -332,14 +401,14 @@ window.AICHReviews = [
       },
       {
         question: "What are the best InstaDoodle alternatives?",
-        answer: "The closest alternatives depend on the workflow. Doodly is a natural doodle-video comparison, Canva AI is broader for design, and Midjourney is stronger for AI image generation."
+        answer: "Doodly and VideoScribe are the closest dedicated whiteboard-animation alternatives. Canva is useful for occasional SpeedPaint-style animation, Animaker offers character-heavy whiteboard production, and Vyond is stronger for business teams."
       },
       {
         question: "Is InstaDoodle worth it?",
-        answer: "InstaDoodle is worth considering if you frequently create simple explainer visuals and the current ClickBank offer makes sense after reviewing the checkout terms."
+        answer: "InstaDoodle is worth considering if you want a fast, browser-based doodle workflow with AI-generated elements. The decision depends on confirming the current checkout terms and whether the available editing depth matches your publishing needs."
       }
     ],
-    finalVerdict: "InstaDoodle earns an AI Creator Hub Score of 8.7 / 10. It is not a broad AI image platform, but it has a clear use case: fast doodle-style explainers for creators who value speed and simplicity. The main caution is to verify the current ClickBank offer, licensing terms, and output fit before using it in serious brand or paid content.",
+    finalVerdict: "InstaDoodle earns an AI Creator Hub Score of 8.7 / 10. Its strongest case is speed: prompt-generated doodle elements, browser-based editing, templates, voice options, and cloud rendering reduce the setup required for an explainer video. The main caution is commercial clarity. Because the official page currently presents both promotional checkout pricing and monthly plan cards, confirm the exact billing terms, included upgrades, and usage rights before purchasing.",
     affiliateDisclosure: "AI Creator Hub may earn a commission if readers purchase InstaDoodle through the ClickBank link on this page. Affiliate relationships do not determine scores, rankings, or recommendations."
   },
   {
@@ -496,7 +565,7 @@ window.AICHReviews = [
     alternatives: [
       {
         name: "InstaDoodle",
-        category: "Images",
+        category: "Video",
         url: "reviews/instadoodle.html",
         summary: "A better fit for fast doodle-style visual assets and lightweight explainer graphics."
       },
@@ -519,11 +588,32 @@ window.AICHReviews = [
         summary: "A useful companion if your explainer workflow needs polished AI narration."
       }
     ],
+    relatedLinks: [
+      {
+        title: "Best Doodly alternatives",
+        url: "alternatives/doodly-alternatives.html",
+        description: "Compare dedicated whiteboard tools and broader animation platforms."
+      },
+      {
+        title: "InstaDoodle vs Doodly",
+        url: "comparisons/instadoodle-vs-doodly.html",
+        description: "Compare workflow, pricing, ease of use, and creator fit."
+      },
+      {
+        title: "Whiteboard animation software for teachers",
+        url: "guides/whiteboard-animation-software-for-teachers.html",
+        description: "Evaluate lesson workflow, trial access, revisions, and classroom output."
+      },
+      {
+        title: "Whiteboard animation software for YouTube",
+        url: "guides/whiteboard-animation-software-for-youtube.html",
+        description: "Compare licensing, aspect ratios, voiceover, and publishing workflows."
+      }
+    ],
     comparisonSuggestions: [
-      "Compare Doodly vs InstaDoodle",
-      "Compare Doodly vs HeyGen",
-      "Compare Doodly vs Canva AI",
-      "Compare Doodly vs Toonly"
+      { title: "Compare Doodly vs InstaDoodle", url: "comparisons/instadoodle-vs-doodly.html" },
+      { title: "Compare Doodly alternatives", url: "alternatives/doodly-alternatives.html" },
+      { title: "Compare InstaDoodle vs VideoScribe", url: "comparisons/instadoodle-vs-videoscribe.html" }
     ],
     faqs: [
       {

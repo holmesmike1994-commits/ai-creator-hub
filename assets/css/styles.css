@@ -2203,6 +2203,97 @@ body::after {
   border-color: var(--border-strong);
 }
 
+.review-methodology {
+  display: grid;
+  gap: 1rem;
+  border-color: rgba(55, 226, 255, 0.24);
+  background:
+    linear-gradient(135deg, rgba(47, 124, 255, 0.08), rgba(99, 230, 190, 0.045)),
+    var(--surface);
+}
+
+.editorial-note {
+  border-left: 2px solid var(--cyan);
+  padding-left: 0.9rem;
+}
+
+.editorial-note strong {
+  color: var(--soft);
+}
+
+.evidence-grid,
+.source-link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 0.85rem;
+}
+
+.evidence-card {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.evidence-card a {
+  display: block;
+  background: #f7f8fc;
+}
+
+.evidence-card img {
+  width: 100%;
+  aspect-ratio: 1.24;
+  object-fit: contain;
+}
+
+.evidence-card figcaption {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.85rem;
+}
+
+.evidence-card figcaption strong,
+.source-link strong {
+  color: var(--text);
+}
+
+.evidence-card figcaption span,
+.source-link span,
+.engine-link-list span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.source-link {
+  display: grid;
+  gap: 0.3rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 0.9rem;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.source-link:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+}
+
+.engine-link-list li {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.engine-link-list a {
+  color: var(--cyan);
+  font-weight: 800;
+}
+
+.engine-link-list a:hover {
+  color: var(--text);
+}
+
 .site-footer {
   position: relative;
   overflow: hidden;
